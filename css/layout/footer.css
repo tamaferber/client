@@ -13,7 +13,7 @@
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0);
 }
 
-.bottom-nav button {
+.bottom-nav a {
     background: none;
     border: none;
     padding: 0;
