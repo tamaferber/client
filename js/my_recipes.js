@@ -3,7 +3,6 @@ const popupTitle = document.getElementById("popupTitle");
 const popupText = document.getElementById("popupText");
 const closePopup = document.getElementById("closePopup");
 
-// מתכונים לדוגמה (ניתן להרחיב)
 const recipes = {
   "onion soup": {
     title: "Onion Soup",
