@@ -1,0 +1,114 @@
+header {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight:bold;
+}
+
+body {
+    background-image: url("../../images/background-myFridge.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+     overflow-x: visible;
+}
+
+.wrapper {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight:bold;
+    margin-bottom: 230px;
+}
+
+.items {
+    display: flex;
+    overflow-x: auto;
+    gap: 5px;
+    list-style: none;
+    padding: 8px 12px;
+    margin: 0;
+    scrollbar-width: none; 
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.items::-webkit-scrollbar {
+    display: none; 
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.items li img {
+    width: 60px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.items li {
+  flex-shrink: 0;
+}
+
+.category {
+    background-color: white;
+    border: 2px solid black;
+    height: 90px;
+    padding: 0; 
+}
+
+.category h2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 12px;
+    margin: 0;
+    height: 20px;
+    line-height: 20px;
+}
+
+.popup {
+  position: absolute;
+  background-color: #D1D7E5;
+  color: #000000;
+  font-family: 'Instrument Serif', serif;
+  font-size: 24px;
+  width: 155px;
+  height: 155px;
+  border: 1px solid #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  padding: 10px;
+  text-align: center;
+}
+
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content span#closePopup {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+

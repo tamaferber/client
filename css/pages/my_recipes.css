@@ -1,0 +1,147 @@
+body {
+  font-family: 'Maven Pro', sans-serif;
+  margin: 0;
+  background-image: url("../../images/background-recipesLists.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wrapper {
+  padding-bottom: 90px;
+}
+
+header {
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    padding-left: 15px;
+    margin-bottom: 27px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+/* תיאור עליון */
+.description {
+  background-color: #FCEFD8;
+  padding: 0% 38px 27px 38px;
+  text-align: center;
+}
+
+.description p {
+  font-size: 11px;
+  font-weight: bold;
+  color: #1F036A;
+  margin: 0;
+}
+
+/* רשימת מתכונים */
+.recipes-list {
+  list-style: none;
+  padding: 0;
+  /* margin-bottom: 143px; */
+}
+
+.recipe-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px solid #C1DEF6;
+  padding: 8px 4px 5px 17px;
+  box-sizing: border-box;
+  gap: 8px;
+}
+
+.recipe-item .text {
+  flex-grow: 1;
+  max-width: calc(100% - 80px);
+}
+
+.recipe-item h2 {
+  font-size: 11px;
+  font-weight: bold;
+  color: #1F036A;
+  margin: 0 0 4px;
+}
+
+.recipe-item p {
+  font-size: 10px;
+  font-weight: 400;
+  color: #1F036A;
+  margin: 0;
+}
+
+.recipe-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border: 1px solid #000;
+}
+
+/* פופאפ */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 90%;
+  /* max-height: 80vh; */
+  height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.popup-content h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  color: #000;
+}
+
+.popup-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+}
+
+#closePopup {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+#closePopup:hover {
+  color: #333;
+}
+

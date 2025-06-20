@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fridge</title>
+    <link  rel="stylesheet" href="../css/pages/my_fridge.css" />
+    <link  rel="stylesheet" href="../css/layout/header.css" />
+    <link  rel="stylesheet" href="../css/layout/footer.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+        <a href="../user/menu.html">
+            <img src="../images/back-arrow.svg" alt="Back" />
+        </a>
+        <h1>your fridge content:</h1>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <main>
+        <section class="category">
+            <h2>Vegetables</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/tomato.png" alt="Tomato" /></li>
+            <li><img src="../images/cucumber.png" alt="Cucumber" /></li>
+            <li><img src="../images/redPaper.png" alt="redPaper" /></li>
+            <li><img src="../images/redOnion.png" alt="redOnion" /></li>
+            <li><img src="../images/potato.png" alt="potato" /></li>
+            <li><img src="../images/carrot.png" alt="carrot" /></li>
+            <li><img src="../images/mushroom.png" alt="mushroom" /></li>
+            <li><img src="../images/mushroom.png" alt="mushroom" /></li>
+            <li><img src="../images/mushroom.png" alt="mushroom" /></li>
+            <li><img src="../images/mushroom.png" alt="mushroom" /></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Fruits</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/apple.png" alt="apple" /></li>
+            <li><img src="../images/orenge.png" alt="orenge" /></li>
+            <li><img src="../images/lemon.png" alt="lemon" /></li>
+            <li><img src="../images/peach.png" alt="peach" /></li>
+            <li><img src="../images/banana.png" alt="banana" /></li>
+            <li><img src="../images/grapes.png" alt="grapes" /></li>
+            <li><img src="../images/strawberry.png" alt="strawberry" /></li>
+            <li><img src="../images/banana.png" alt="Banana" /></li>
+            <li><img src="../images/banana.png" alt="Banana" /></li>
+            <li><img src="../images/banana.png" alt="Banana" /></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Dairy</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/milk.png" alt="Milk" /></li>
+            <li><img src="../images/cheese.png" alt="Cheese" /></li>
+            <li><img src="../images/eggs.png" alt="eggs" /></li>
+            <li><img src="../images/butter.png" alt="butter" /></li>
+            <li><img src="../images/yogurt.png" alt="yogurt" /></li>
+            <li><img src="../images/cheese.png" alt="Cheese" /></li>
+            <li><img src="../images/cheese.png" alt="Cheese" /></li>
+            <li><img src="../images/cheese.png" alt="Cheese" /></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Meat & Chicken</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/steak.png" alt="Steak" /></li>
+            <li><img src="../images/groundMeat.png" alt="groundMeat" /></li>
+            <li><img src="../images/chicken.png" alt="Chicken" /></li>
+            <li><img src="../images/fish.png" alt="fish" /></li>
+            <li><img src="../images/fish.png" alt="fish" /></li>
+            <li><img src="../images/fish.png" alt="fish" /></li>
+            <li><img src="../images/fish.png" alt="fish" /></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Drinks</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/water.png" alt="water" /></li>
+            <li><img src="../images/orangeJuice.png" alt="orangeJuice" /></li>
+            <li><img src="../images/ranche.png" alt="ranche" /></li>
+            <li><img src="../images/wine.png" alt="Wine" /></li>
+            <li><img src="../images/beer.png" alt="beer" /></li>
+            <li><img src="../images/beer.png" alt="beer" /></li>
+            <li><img src="../images/beer.png" alt="beer" /></li>
+            <li><img src="../images/beer.png" alt="beer" /></li>
+            </ul>
+        </section>
+
+        <section class="category">
+            <h2>Other</h2>
+            <ul class="items scroll-x">
+            <li><img src="../images/stew.png" alt="stew" /></li>
+            <li><img src="../images/bread.png" alt="Bread" /></li>
+            <li><img src="../images/medications.png" alt="medications" /></li>
+            <li><img src="../images/medications.png" alt="medications" /></li>
+            <li><img src="../images/medications.png" alt="medications" /></li>
+            <li><img src="../images/medications.png" alt="medications" /></li>
+            </ul>
+        </section>
+    </main>
+  </div>
+
+  <footer>
+    <nav class="bottom-nav">
+        <a href="..user/settings.html"><img src="../images/settingsICON.png" alt="Settings" /></a>
+        <a href="..user/profile.html"><img src="../images/profileICON.png" alt="Profile" /></a>
+        <a href="../user/menu.html"><img src="../images/homeICON.png" alt="Home" /></a>
+    </nav>
+  </footer>
+  <!-- data card- popUp -->
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="closePopup">&times;</span>
+                <p id="popupText">Amount: 0<br>Expiration date: --/--/----</p>
+            </div>
+        </div>
+  <script src="../js/my_fridge.js"></script>
+</body>
+</html>
