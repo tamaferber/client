@@ -1,0 +1,264 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
+}
+
+body{
+ display :flex;
+ justify-content: center;
+ align-items: center;
+ min-height:100vh;
+ background-image:url(../assets/login.jpg);
+ background-size: contain;
+ background-position: center;
+
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.index h1{
+
+ position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size:200px;
+  color: rgba(23, 4, 78, 1);
+  font-weight: 600;
+}
+
+
+.buttons {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 267px;
+  transform: translateX(-50%);  
+  
+ 
+}
+
+button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+ 
+}
+
+.log-in{
+  background-color:  rgba(23, 4, 78, 1);
+  color: aliceblue;
+  font-size: 26px;
+}
+
+.sign-up{
+  background-color:  rgba(23, 4, 78, 1);
+  color: aliceblue;
+  font-size: 26px;
+}
+
+.admin-link {
+  margin-top: 10px;
+}
+
+.admin-log-in {
+  position: absolute;
+  display: flex;
+  color: rgba(23, 4, 78, 1);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  flex-direction: row;
+  align-items: center;
+  left: 50%;                    
+  bottom: 50px;               
+  transform: translateX(-50%);  
+  white-space: nowrap;
+  padding: 5px 10px;
+
+}
+
+.admin-log-in:hover {
+  text-decoration: underline;
+  color: rgba(23, 4, 78, 1);
+  align-items: center;
+  justify-content: center;
+}
+
+/************login*******************/
+
+.log-in h1{
+   position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size:200px;
+  color: rgba(23, 4, 78, 1);
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 5px 10px;
+
+}
+
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-box input {
+  border-radius: 10px;
+  border: 5px solid rgba(23, 4, 78, 1);
+  padding: 6px 12px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-container{
+  margin-top: 600px;
+  border: 4px solid rgba(23, 4, 78, 1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forget {
+   display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 400;
+  color:rgba(23, 4, 78, 1)
+}
+
+.btn{
+  background-color: rgba(23, 4, 78, 1);
+  color: aliceblue;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.details{
+  color:rgba(23, 4, 78, 1);
+  font-weight: 500;
+}
+
+.forget:hover {
+  text-decoration: underline;
+  color: rgba(23, 4, 78, 1);
+}
+
+
+
+/*//////home///////////*/
+
+body.home {
+  background-image: url(../assets/roam-in-color-zzMb7jacyBc-unsplash.jpg);
+   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.items {
+  display: flex;
+  flex-direction: column;
+   align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+  border-radius: 20px;
+  width: 345px;
+  color: rgb(201, 246, 193);
+  
+}
+
+.btn.my-fridge{
+  width: 200%;
+  padding:18px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color:rgba(193, 222, 246, 1);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.btn.recipes{
+  width: 200%;
+  padding:18px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color:rgba(193, 222, 246, 1);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn.shopping{
+   width: 200%;
+  padding:18px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color:rgba(193, 222, 246, 1);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.text-content{
+text-align: left;
+font-weight: 100;
+}
+
+.icon {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+   margin-left: 20px;
+  
+}
