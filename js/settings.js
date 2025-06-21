@@ -20,3 +20,35 @@ document.querySelectorAll(".custom-select").forEach(select => {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("settingsForm");
+
+  form.addEventListener("change", () => {
+    const settings = {};
+    document.querySelectorAll(".custom-select").forEach(select => {
+      const name = select.getAttribute("data-name");
+      const value = select.querySelector(".selected-option").textContent.trim();
+      settings[name] = value;
+    });
+
+    fetch("http://localhost:3000/api/settings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(settings)
+    })
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to save settings");
+        return response.json();
+      })
+      .then(data => {
+        console.log("Settings saved:", data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  });
+});
