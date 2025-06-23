@@ -1,1 +1,135 @@
-<!-- the shopping page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping</title>
+  <link rel="stylesheet" href="../css/pages/order.css">
+  <link  rel="stylesheet" href="../css/layout/header.css" />
+  <link rel="stylesheet" href="../css/layout/footer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <header class="top-bar">
+            <h1>Shopping</h1> 
+       </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." />
+                    <img src="../images/Search.png" alt="search-icon" class="search-icon" />
+                </div>
+                <img src="../images/Shopping-cart.png" alt="Cart" class="cart-icon" />
+            </div>
+            <section class="category">
+                <h2>Vegetables</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Tomato', 6, '../images/tomato.png')"><img src="../images/tomato.png" alt="Tomato" /></li>
+                    <li onclick="openPopup('Cucumber', 14, '../images/cucumber.png')"><img src="../images/cucumber.png" alt="Cucumber" /></li>
+                    <li onclick="openPopup('Red Pepper', 9, '../images/redPaper.png')"><img src="../images/redPaper.png" alt="Red Pepper" /></li>
+                    <li onclick="openPopup('Red Onion', 8, '../images/redOnion.png')"><img src="../images/redOnion.png" alt="Red Onion" /></li>
+                    <li onclick="openPopup('Potato', 13, '../images/potato.png')"><img src="../images/potato.png" alt="Potato" /></li>
+                    <li onclick="openPopup('Carrot', 13, '../images/carrot.png')"><img src="../images/carrot.png" alt="Carrot" /></li>
+                    <li onclick="openPopup('Mushroom', 13, '../images/mushroom.png')"><img src="../images/mushroom.png" alt="Mushroom" /></li>
+                    <li onclick="openPopup('Avocado', 14, '../images/avocado.png')"><img src="../images/avocado.png" alt="Avocado" /></li>
+                    <li onclick="openPopup('Eggplant', 7, '../images/eggplant.jpg')"><img src="../images/eggplant.jpg" alt="Eggplant" /></li>
+                    <li onclick="openPopup('Lettuce', 10, '../images/lettuce.png')"><img src="../images/lettuce.png" alt="Lettuce" /></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Fruits</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Apple', 11, '../images/apple.png')"><img src="../images/apple.png" alt="Apple" /></li>
+                    <li onclick="openPopup('Orange', 7, '../images/orenge.png')"><img src="../images/orenge.png" alt="Orange" /></li>
+                    <li onclick="openPopup('Lemon', 4, '../images/lemon.png')"><img src="../images/lemon.png" alt="Lemon" /></li>
+                    <li onclick="openPopup('Peach', 12, '../images/peach.png')"><img src="../images/peach.png" alt="Peach" /></li>
+                    <li onclick="openPopup('Banana', 3, '../images/banana.png')"><img src="../images/banana.png" alt="Banana" /></li>
+                    <li onclick="openPopup('Grapes', 6, '../images/grapes.png')"><img src="../images/grapes.png" alt="Grapes" /></li>
+                    <li onclick="openPopup('Strawberry', 15, '../images/strawberry.png')"><img src="../images/strawberry.png" alt="Strawberry" /></li>
+                    <li onclick="openPopup('Kiwi', 15, '../images/kiwi.png')"><img src="../images/kiwi.png" alt="Kiwi" /></li>
+                    <li onclick="openPopup('Raspberry', 13, '../images/raspberry.png')"><img src="../images/raspberry.png" alt="Raspberry" /></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Dairy</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Milk', 13, '../images/milk.png')"><img src="../images/milk.png" alt="Milk" /></li>
+                    <li onclick="openPopup('Cheese', 2, '../images/cheese.png')"><img src="../images/cheese.png" alt="Cheese" /></li>
+                    <li onclick="openPopup('Eggs', 14, '../images/eggs.png')"><img src="../images/eggs.png" alt="Eggs" /></li>
+                    <li onclick="openPopup('Butter', 6, '../images/butter.png')"><img src="../images/butter.png" alt="Butter" /></li>
+                    <li onclick="openPopup('Yogurt', 5, '../images/yogurt.png')"><img src="../images/yogurt.png" alt="Yogurt" /></li>
+                    <li onclick="openPopup('Kids Yogurt', 3, '../images/kidsYogurt.png')"><img src="../images/kidsYogurt.png" alt="Kids Yogurt" /></li>
+                    <li onclick="openPopup('Cream', 6, '../images/bowlOfCream.png')"><img src="../images/bowlOfCream.png" alt="Cream" /></li>
+                    <li onclick="openPopup('Cake', 15, '../images/cake.png')"><img src="../images/cake.png" alt="Cake" /></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Meat & Chicken</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Steak', 15, '../images/steak.png')"><img src="../images/steak.png" alt="Steak" /></li>
+                    <li onclick="openPopup('Ground Meat', 15, '../images/groundMeat.png')"><img src="../images/groundMeat.png" alt="Ground Meat" /></li>
+                    <li onclick="openPopup('Chicken', 12, '../images/chicken.png')"><img src="../images/chicken.png" alt="Chicken" /></li>
+                    <li onclick="openPopup('Fish', 4, '../images/fish.png')"><img src="../images/fish.png" alt="Fish" /></li>
+                    <li onclick="openPopup('Hot Dog', 10, '../images/hot-dog.png')"><img src="../images/hot-dog.png" alt="Hot Dog" /></li>
+                    <li onclick="openPopup('Shrimps', 5, '../images/shrips.png')"><img src="../images/shrips.png" alt="Shrimps" /></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Drinks</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Water', 3, '../images/water.png')"><img src="../images/water.png" alt="Water" /></li>
+                    <li onclick="openPopup('Orange Juice', 10, '../images/orangeJuice.png')"><img src="../images/orangeJuice.png" alt="Orange Juice" /></li>
+                    <li onclick="openPopup('Ranche', 6, '../images/ranche.png')"><img src="../images/ranche.png" alt="Ranche" /></li>
+                    <li onclick="openPopup('Wine', 12, '../images/wine.png')"><img src="../images/wine.png" alt="Wine" /></li>
+                    <li onclick="openPopup('Beer', 13, '../images/beer.png')"><img src="../images/beer.png" alt="Beer" /></li>
+                    <li onclick="openPopup('Pepsi', 3, '../images/pepsi.png')"><img src="../images/pepsi.png" alt="Pepsi" /></li>
+                </ul>
+            </section>
+
+            <section class="category">
+                <h2>Other</h2>
+                <ul class="items scroll-x">
+                    <li onclick="openPopup('Stew', 5, '../images/stew.png')"><img src="../images/stew.png" alt="Stew" /></li>
+                    <li onclick="openPopup('Bread', 15, '../images/bread.png')"><img src="../images/bread.png" alt="Bread" /></li>
+                    <li onclick="openPopup('Jam', 3, '../images/jam.png')"><img src="../images/jam.png" alt="Jam" /></li>
+                    <li onclick="openPopup('Leftovers', 3, '../images/leftovers.png')"><img src="../images/leftovers.png" alt="Leftovers" /></li>
+                    <li onclick="openPopup('Medications', 2, '../images/medications.png')"><img src="../images/medications.png" alt="Medications" /></li>
+                    <li onclick="openPopup('Battery', 10, '../images/battery.png')"><img src="../images/battery.png" alt="Battery" /></li>
+                </ul>
+            </section>
+        </main>
+
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+                <span id="closePopup">&times;</span>
+                <img id="popupImage" src="" alt="" />
+                <p id="popupName"></p>
+                <p id="popupPrice"></p>
+                <div class="quantity">
+                    <button onclick="decreaseQty()">-</button>
+                    <span id="popupQty">1</span>
+                    <button onclick="increaseQty()">+</button>
+                </div>
+                <div class="popup-actions">
+                    <button class="cart-btn">
+                        <img src="../images/Shopping-cart.png" alt="Cart" class="cart-icon" />
+                    </button>
+                    <button>❤️</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/order.js"></script>
+    </div>
+</body>
+</html>
+
+

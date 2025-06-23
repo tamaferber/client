@@ -1,0 +1,254 @@
+header {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight:bold;
+    display: flex;
+    margin-left: 138px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-image: url("../../images/background-recipesLists.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: visible;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+.top-bar {
+  background-color: #C1DEF6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  height: 87px;
+}
+
+.top-bar input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.cart-icon {
+  width: 32px;
+  height: 32px;
+}
+
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 250px; 
+}
+
+.search-box input[type="text"] {
+  width: 100%;
+  padding: 5px 40px 5px 12px; 
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; 
+  height: 20px;  
+  pointer-events: none; 
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 36px;
+}
+
+main {
+  padding: 0 16px;
+}
+
+.category {
+  margin-top: 20px;
+}
+
+.category h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.items {
+  display: flex;
+  overflow-x: auto;
+  list-style: none;
+  gap: 12px;
+  padding-bottom: 10px;
+ -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.items li {
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.items img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.items::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Popup styles */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup-content {
+  background-color: #C1DEF6;
+  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup-content img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+.popup-content p {
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.popup-actions button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cart-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cart-btn img {
+  width: 32px;
+  height: 32px;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.quantity button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#closePopup {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #C1DEF6;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+footer img {
+  width: 28px;
+  height: 28px;
+}
