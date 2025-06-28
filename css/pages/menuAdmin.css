@@ -1,0 +1,82 @@
+body {
+  font-family: 'Maven Pro', sans-serif;
+  margin: 0;
+  font-family: 'Maven Pro', sans-serif;
+  background-image: url("../../images/background-recipesMenu.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: visible;
+}
+
+.header {
+  font-family: 'Maven Pro', sans-serif;
+  background-color: #C1DEF6;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-left: 180px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.inbox-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.title-image {
+  margin: 0 35px 0 120px;   
+}
+
+
+.admin-main {
+  background-image: url("../images/admin-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 36px 0;
+  min-height: calc(100vh - 160px);
+}
+
+.admin-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.admin-button {
+  background-color: #C1DEF6;
+  border-radius: 22px;
+  border: 0.5px solid #000;
+  width: 350px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+.admin-button img {
+  height: 60px;
+  width: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.footer-nav img {
+  width: 36px;
+  height: 36px;
+}
