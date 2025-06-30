@@ -351,3 +351,37 @@ window.addEventListener("click", (e) => {
     popup.classList.add("hidden");
   }
 });
+
+
+function submitNewRecipe() {
+  const title = document.getElementById("recipeTitle").value;
+  const description = document.getElementById("recipeDescription").value;
+  const imageInput = document.getElementById("recipeImage");
+  const imageFile = imageInput.files[0];
+
+  console.log("Submitted recipe:", { title, description, imageFile });
+
+  // כאן אפשר להמשיך עם שמירה ל-JSON או הוספה ל-DOM
+  closeAddRecipePopup();
+}
+
+
+
+// פתיחת חלונית הוספת מתכון
+const addRecipeBtn = document.getElementById("addRecipeBtn");
+const addRecipePopup = document.getElementById("addRecipePopup");
+const closeAddPopup = document.getElementById("closeAddPopup");
+
+addRecipeBtn.addEventListener("click", () => {
+  addRecipePopup.classList.remove("hidden");
+});
+
+closeAddPopup.addEventListener("click", () => {
+  addRecipePopup.classList.add("hidden");
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === addRecipePopup) {
+    addRecipePopup.classList.add("hidden");
+  }
+});

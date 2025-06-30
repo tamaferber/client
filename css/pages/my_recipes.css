@@ -145,3 +145,70 @@ header h1 {
   color: #333;
 }
 
+.add-recipe-section {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.add-recipe-btn {
+  position: fixed;
+  bottom: 90px;
+  left: 27px;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.add-recipe-btn img {
+  width: 50px;
+  height: 50px;
+}
+
+#addRecipePopup .popup-content {
+  max-width: 500px;
+  max-height: 80vh;
+}
+
+.popup-content input[type="text"],
+.popup-content input[type="file"],
+.popup-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 14px;
+}
+
+.popup-content textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.popup-content label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1F036A;
+}
+
+.popup-content button {
+  background-color: #1F036A;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.popup-content button:hover {
+  background-color: #372a88;
+}
+
