@@ -157,6 +157,25 @@ body {
   font-family: inherit;
 }
 
+.sent-message {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(100, 100, 100, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-size: 16px;
+  z-index: 999;
+  transition: opacity 0.3s ease-in-out;
+}
+.sent-message.hidden {
+  display: none;
+}
+
+
 .popup-buttons {
   display: flex;
   justify-content: space-between;
@@ -321,7 +340,6 @@ body {
   top: 60%;
   right: 30px;;
   transform: translateY(-20%);
-  /* background: white; */
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #ccc;
   border-radius: 10px;
