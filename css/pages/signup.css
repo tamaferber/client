@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
+}
+
+body{
+   background-image:url(../../images/login.jpg);
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+     overflow: hidden;
+  }
+
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 956px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  font-size: 80px; 
+  color: rgba(23, 4, 78, 1);
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 305px; 
+  font-size: 95px;
+}
+
+
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  align-items: center;
+
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.input-box input {
+  width: 247px;
+  height: 39px;
+  border-radius: 10px;
+  border: 3px solid rgba(23, 4, 78, 1);
+  padding: 0 12px; 
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-size: 18px; 
+  box-sizing: border-box;
+  background-color: transparent;
+  color:rgba(23, 4, 78, 1);  ;
+}
+
+.form-container {
+  position: absolute;
+  top :450px;
+  left: 50%;                      
+  transform: translateX(-50%);
+  width: 350px;
+  height: 458px;
+  border: 1px solid rgba(23, 4, 78, 1);
+  border-radius: 20px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.forget {
+   display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+  font-weight: 400;
+  color:rgba(23, 4, 78, 1)
+}
+
+.btn {
+  width: 247px;
+  height: 39px;
+  background-color: rgba(23, 4, 78, 1);
+  color: aliceblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 24px; 
+  padding: 0;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 14px;
+}
+
+
+.input-group .details {
+  font-size: 14px;
+  font-weight: 600;
+  align-self: flex-start;
+  margin-left: calc(50% - 123.5px); /* 247 / 2 */
+  margin-bottom: 5px;
+}
+
+.details{
+  color:rgba(23, 4, 78, 1);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.forget:hover {
+  text-decoration: underline;
+  color: rgba(23, 4, 78, 1);
+}
