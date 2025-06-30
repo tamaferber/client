@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users List</title>
+  <link rel="stylesheet" href="../css/layout/header.css">
+  <link rel="stylesheet" href="../css/layout/footer.css">
+  <link rel="stylesheet" href="../css/pages/usersAdmin.css">
+</head>
+<body>
+  <header class="header">
+    <span class="title">users</span>
+  </header>
+
+  <main class="users-main">
+    <div class="search-container">
+      <input type="text" placeholder="Search users...">
+      <img src="../images/Search.png" alt="Search Icon">
+    </div>
+
+    <ul class="user-list">
+      <li class="user-item">
+        <a href="#" class="user-link">
+           <div class="user-icon-wrapper">
+                <img src="../images/EllipseUser.png" alt="User background" class="circle-bg">
+                <img src="../images/Usericon.png" alt="User Icon" class="user-icon">
+            </div>
+        <span>Ester</span>
+        </a>
+      </li>
+      <li class="user-item">
+        <a href="#" class="user-link">
+            <div class="user-icon-wrapper">
+                <img src="../images/EllipseUser.png" alt="User background" class="circle-bg">
+                <img src="../images/Usericon.png" alt="User Icon" class="user-icon">
+            </div>
+          <span>Tama</span>
+        </a>
+      </li>
+      <li class="user-item">
+        <a href="#" class="user-link">
+           <div class="user-icon-wrapper">
+                <img src="../images/EllipseUser.png" alt="User background" class="circle-bg">
+                <img src="../images/Usericon.png" alt="User Icon" class="user-icon">
+            </div>
+          <span>User3</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <div class="floating-actions">
+    <button class="add-user-button">
+      <img src="../images/Plus.png" alt="add-user-button">
+    </button>
+    <button class="open-message-button">
+      <img src="../images/Message square.png" alt="Message">
+    </button>
+  </div>
+
+  <div class="message-popup hidden">
+    <div class="message-box">
+      <button class="close-popup">×</button>
+      <h3>To:</h3>
+      <textarea placeholder="Type your message"></textarea>
+      <div class="popup-buttons">
+        <button class="cancel-button">cancel</button>
+        <button class="send-button">send</button>
+      </div>
+    </div>
+  </div>
+
+    <div class="add-user-popup hidden">
+        <div class="popup-box">
+            <button class="close-add-user">×</button>
+            <h3>Enter name for new user:</h3>
+            <input type="text" id="newUserName" placeholder="New user name" />
+            <div class="popup-buttons">
+                <button class="cancel-add-user">Cancel</button>
+                <button class="confirm-add-user">Add</button>
+            </div>
+        </div>
+    </div>
+
+  <footer class="footer">
+    <nav class="bottom-nav">
+      <a href="./adminSettings.html"><img src="../images/settingsICON.png" alt="Settings"></a>
+      <a href="../pages/profile.html"><img src="../images/profileICON.png" alt="Profile"></a>
+      <a href="./menuAdmin.html"><img src="../images/homeICON.png" alt="Home"></a>
+    </nav>
+  </footer>
+
+  <script src="../js/users.js"></script>
+</body>
+</html>
