@@ -61,6 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           <span>${name}</span>
         </a>
+        <button class="delete-user-button">
+            <img src="../images/Trash.png" alt="delete-user-button">
+        </button>
       `;
       userList.appendChild(li);
       addUserPopup.classList.add('hidden');
@@ -68,3 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("click", (e) => {
+  const deleteBtn = e.target.closest(".delete-user-button");
+  if (deleteBtn) {
+    const li = deleteBtn.closest("li.user-item");
+    if (li) {
+      li.remove();
+    }
+  }
+});
