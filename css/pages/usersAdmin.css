@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   font-family: 'Maven Pro', sans-serif;
@@ -56,11 +54,11 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-
   align-items: flex-start;
 }
 
 .user-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -144,10 +142,6 @@ body {
   width: 300px;
 }
 
-.hidden {
-  display: none;
-}
-
 .message-box h3 {
   margin-top: 0;
   font-size: 18px;
@@ -190,8 +184,6 @@ body {
   cursor: pointer;
 }
 
-
-
 .footer-nav {
   display: flex;
   justify-content: space-around;
@@ -204,9 +196,6 @@ body {
   width: 36px;
   height: 36px;
 }
-
-
-
 
 .add-user-popup {
   position: fixed;
@@ -276,10 +265,6 @@ body {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
-}
-
 .user-icon-container {
   position: relative;
   width: 40px;
@@ -304,15 +289,6 @@ body {
   height: 32px;
 }
 
-
-
-
-
-
-
-
-
-
 .delete-user-button {
   background: none;
   border: none;
@@ -322,9 +298,79 @@ body {
   padding: 8px;
   transition: color 0.2s;
   flex-shrink: 0;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .delete-user-button:hover {
   color: red;
+}
+
+.edit-menu-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.edit-menu-button img {
+  width: 24px;
+  height: 24px;
+}
+
+.user-edit-popup {
+  position: absolute;
+  top: 60%;
+  right: 30px;;
+  transform: translateY(-20%);
+  /* background: white; */
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+}
+
+.user-edit-popup.hidden {
+  display: none;
+}
+
+.edit-option {
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-option img {
+  width: 20px;
+  height: 20px;
+}
+
+.edit-option:hover {
+  background-color: #f0f0f0;
+}
+
+.edit-name-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.6);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 50px; 
+  justify-content: center;
+  z-index: 400;
+}
+
+.hidden {
+  display: none !important;
 }

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/pages/usersAdmin.css">
 </head>
 <body>
+
   <header class="header">
     <span class="title">users</span>
   </header>
@@ -28,9 +29,20 @@
             </div>
         <span>Ester</span>
         </a>
-        <button class="delete-user-button">
-            <img src="../images/Trash.png" alt="delete-user-button">
+        <button class="edit-menu-button">
+            <img src="../images/editAdmin.png" alt="Edit user options" />
         </button>
+
+         <div class="user-edit-popup hidden">
+            <button class="edit-option edit-name">
+                <img src="../images/editUser.png" alt="Edit">
+                Edit
+            </button>
+            <button class="edit-option delete-user">
+                <img src="../images/deleteUser.png" alt="delete-user">
+                Delete
+            </button>
+        </div>
       </li>
       <li class="user-item">
         <a href="#" class="user-link">
@@ -40,9 +52,20 @@
             </div>
           <span>Tama</span>
         </a>
-        <button class="delete-user-button">
-            <img src="../images/Trash.png" alt="delete-user-button">
+        <button class="edit-menu-button">
+            <img src="../images/editAdmin.png" alt="Edit user options" />
         </button>
+        <div class="user-edit-popup hidden">
+            <button class="edit-option edit-name">
+                <img src="../images/editUser.png" alt="Edit">
+                Edit
+            </button>
+            <button class="edit-option delete-user">
+                <img src="../images/deleteUser.png" alt="delete-user">
+                Delete
+            </button>
+        </div>
+
       </li>
       <li class="user-item">
         <a href="#" class="user-link">
@@ -52,33 +75,50 @@
             </div>
           <span>User3</span>
         </a>
-        <button class="delete-user-button">
-            <img src="../images/Trash.png" alt="delete-user-button">
+        <button class="edit-menu-button">
+            <img src="../images/editAdmin.png" alt="Edit user options" />
         </button>
+        <div class="user-edit-popup hidden">
+            <button class="edit-option edit-name">
+                <img src="../images/editUser.png" alt="Edit">
+                Edit
+            </button>
+            <button class="edit-option delete-user">
+                <img src="../images/deleteUser.png" alt="delete-user">
+                Delete
+            </button>
+        </div>
       </li>
     </ul>
   </main>
 
   <div class="floating-actions">
     <button class="add-user-button">
-      <img src="../images/Plus.png" alt="add-user-button">
+        <img src="../images/Plus.png" alt="Add User">
     </button>
     <button class="open-message-button">
       <img src="../images/Message square.png" alt="Message">
     </button>
   </div>
 
-  <div class="message-popup hidden">
-    <div class="message-box">
-      <button class="close-popup">×</button>
-      <h3>To:</h3>
-      <textarea placeholder="Type your message"></textarea>
-      <div class="popup-buttons">
-        <button class="cancel-button">cancel</button>
-        <button class="send-button">send</button>
-      </div>
+<div class="message-popup hidden">
+  <div class="message-box">
+    <button class="close-popup">×</button>
+
+    <label for="recipientInput">To:</label>
+    <input type="text" id="recipientInput" placeholder="Enter recipient name" />
+
+    <textarea placeholder="Type your message"></textarea>
+
+    <div class="popup-buttons">
+      <button class="cancel-button">cancel</button>
+      <button class="send-button">send</button>
     </div>
   </div>
+</div>
+
+<div class="sent-message hidden">Message sent!</div>
+
 
     <div class="add-user-popup hidden">
         <div class="popup-box">
@@ -91,6 +131,18 @@
             </div>
         </div>
     </div>
+
+    <div class="edit-name-popup hidden">
+        <div class="popup-box">
+            <h3>Edit user name:</h3>
+            <input type="text" id="editUserName" />
+            <div class="popup-buttons">
+                <button class="cancel-edit-name">Cancel</button>
+                <button class="confirm-edit-name">Save</button>
+            </div>
+        </div>
+    </div>
+
 
   <footer class="footer">
     <nav class="bottom-nav">
