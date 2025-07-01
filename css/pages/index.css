@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
+}
+
+body{
+   background-image:url(../../images/login.jpg);
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+
+.wrapper {
+  position: relative;
+  height: auto; 
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; 
+}
+
+
+h1{
+
+ position: absolute;
+  top: 308px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 95px;
+  color:rgba(23, 4, 78, 1);
+  font-weight: 600;
+}
+
+
+.log-in {
+  position: absolute;
+  top: 745px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 267px;
+  height: 39px;
+  font-size: 16px;
+  background-color: rgba(23, 4, 78, 1);
+  color: aliceblue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.sign-up {
+  position: absolute;
+  top: 817px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 267px;
+  height: 39px;
+  font-size: 16px;
+  background-color: rgba(23, 4, 78, 1);
+  color: aliceblue;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+
+.admin-link {
+  margin-top: 10px;
+}
+
+.admin-log-in {
+  position: absolute;
+  top: 878px;                
+  left: 50%;                 
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 12px;          
+  font-weight: bold;         
+  color: rgba(23, 4, 78, 1);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.admin-log-in:hover {
+  text-decoration: underline;
+  color: rgba(23, 4, 78, 1);
+  align-items: center;
+  justify-content: center;
+}
