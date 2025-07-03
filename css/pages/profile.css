@@ -42,6 +42,8 @@ main {
  
 }
 
+
+
 header h1 {
   position: relative;
   font-size: 28px;
@@ -51,53 +53,43 @@ header h1 {
 
 }
 
+.image {
+  position: relative;
+  width: 71px;
+  height: 71px;
+  left: 15px;
+}
+
+
+.image img {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(23, 4, 78, 0.5);
+  transition: opacity 0.2s;
+}
+
+.image img:hover {
+  opacity: 0.8;
+}
+.user-file {
+  display: none;
+}
+
+
+
 
 h2 {
-  font-weight: 600; 
+  font-weight: 800; 
   font-size: 14px;   
   color: rgba(23, 4, 78, 1);     
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-.photo #fileInput {
-  display: none;
-}
 
-.photo .avatar-wrapper{
-  position: relative;
-  height: 71px;
-  width: 71px;
- cursor: pointer;
-
-
-}
-
-.photo .avatar-wrapper img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;      
-  object-fit: cover;        
-  transition: transform 0.2s;
-}
-
-.photo .avatar-wrapper .edit-icon {
-  position: absolute;
-  bottom: 4px;
-  right: 4px;
-  border-radius: 50%;
-  padding: 4px;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-
-.photo .avatar-wrapper:hover img {
-  transform: scale(1.1);
-}
-.photo .avatar-wrapper:hover .edit-icon {
-  opacity: 1;
-}
 
 .input-column {
   display: flex;
@@ -118,11 +110,9 @@ h2 {
 
 }
 
-
-
 .details {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(23, 4, 78, 1);
   margin-bottom: 5px;
 }
