@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/pages/signup.css">
+  <script src="/js/signup.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Nunito&family=Abel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
 
@@ -16,29 +17,27 @@
 <body  class="log-in">
 
   <section class="wrapper">
-     <form action="">
+    <form id="signupForm" action="/user/home.html" method="get">
       <h1>Sign up</h1>
 
 <section class="form-container">
       <section class="input-box">
 
         <span class="details">username</span>
-        <input type="text" required>
+        <input id="username" name="username" type="text" required>
 
         <span class="details">password</span>
-        <input type="password" required>
+        <input id="password" name="password" type="password" required>
 
         <span class="details">veridy password</span>
-        <input type="password"required>
+         <input id="password2" name="password2" type="password" required>
 
         <span class="details">gmail</span>
-        <input type="email" required>
+      <input id="email" name="email" type="email" required>
 
       </section>
 
-     <button type="submit" class="btn">
-       Sign up
-     </button>
+     <button id="signupbtn" type="button" class="btn"> Sign up</button>
 
 </section>
        </form> 
