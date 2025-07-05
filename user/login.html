@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/pages/login.css">
+    <script src="/js/login.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Nunito&family=Abel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
 
@@ -16,13 +17,13 @@
 <body  class="log-in">
 
   <section class="wrapper">
-     <form action="">
+      <form id="loginForm" action="/user/home.html" method="get">
       <h1>log in</h1>
 
 <section class="form-container">
       <section class="input-box">
         <span class="details">Email</span>
-        <input type="text" required>
+        <input type="email" required>
         <span class="details">password</span>
         <input type="password" required>
       </section>
@@ -31,9 +32,7 @@
       <a href="#">forget password?</a>
      </section>
 
-     <button type="submit" class="btn">
-      Log in
-     </button>
+     <button type="submit" class="btn">Log in</button>
 </section>
        </form> 
     </section>
