@@ -1,9 +1,32 @@
-header {
+ header {
     justify-content: flex-start;
     align-items: center;
     display: flex;
     padding: 15px;
     margin-bottom: 30px;
+}
+
+.status-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.status-message.error {
+  background-color: #f44336;
+}
+
+.status-message.hidden {
+  display: none;
 }
 
 .header-content {
@@ -24,7 +47,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-     overflow-x: visible;
+    overflow-x: visible;
 }
 
 .wrapper {
@@ -82,32 +105,82 @@ h2 {
     line-height: 20px;
 }
 
+/* ✅ popup עיצוב חדש לחלונית */
 .popup {
   position: absolute;
-  background-color: #D1D7E5;
-  color: #000000;
-  font-family: 'Instrument Serif', serif;
-  font-size: 24px;
-  width: 155px;
-  height: 155px;
-  border: 1px solid #000000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(240, 248, 255, 0.97);
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  padding: 15px 20px;
   z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #333;
+  width: 220px;
   display: none;
-  padding: 10px;
-  text-align: center;
 }
-
 
 .popup.hidden {
   display: none;
 }
 
+.popup-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.popup-content input[type="number"],
+.popup-content input[type="date"] {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.popup-content button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #2b80b8;
+}
+
 .popup-content span#closePopup {
   position: absolute;
-  top: 5px;
-  right: 8px;
-  font-size: 20px;
+  top: 6px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 18px;
   cursor: pointer;
 }
 
+/* ✅ עיצוב לכפתור Save to Fridge */
+#saveFridgeBtn {
+  position: absolute;
+  top: 682px;
+  right: 16px;
+  background-color: #f0f8fff7;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+#saveFridgeBtn:hover {
+  background-color: #a5e4c0;
+}
