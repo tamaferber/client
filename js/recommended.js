@@ -1,14 +1,14 @@
 // 1. Получаем продукты из MongoDB
 async function getFridgeItems() {
   try {
-    const res = await fetch("http://localhost:3000/api/fridge");
+    const res = await fetch("https://smartfridge-server.onrender.com/");
     const data = await res.json();
-    console.log("Продукты из базы:", data);
+    console.log("products from DB:", data);
 
     // нам нужны только названия продуктов
     return data.map(item => item.name.toLowerCase());
   } catch (err) {
-    console.error("Ошибка при получении продуктов:", err);
+    console.error("error getting products:", err);
     return [];
   }
 }
@@ -21,10 +21,10 @@ async function getRecipesFromAPI(ingredients) {
   try {
     const res = await fetch(url);
     const recipes = await res.json();
-    console.log("Рецепты из API:", recipes);
+    console.log("recipes from API:", recipes);
     return recipes;
   } catch (err) {
-    console.error("Ошибка при получении рецептов:", err);
+    console.error("error getting recipe:", err);
     return [];
   }
 }
@@ -35,7 +35,7 @@ function showRecipes(recipes) {
   container.innerHTML = ""; // очищаем перед обновлением
 
   if (!recipes.length) {
-    container.innerHTML = "<p>Нет рецептов для отображения</p>";
+    container.innerHTML = "<p>recipes not found</p>";
     return;
   }
 
@@ -51,11 +51,11 @@ function showRecipes(recipes) {
     title.textContent = recipe.title;
 
     const description = document.createElement("p");
-    description.textContent = `Использованные ингредиенты: ${recipe.usedIngredientCount}, дополнительные: ${recipe.missedIngredientCount}`;
+    description.textContent = `products in usage: ${recipe.usedIngredientCount}, additional: ${recipe.missedIngredientCount}`;
 
     const link = document.createElement("a");
     link.href = `https://spoonacular.com/recipes/${recipe.title.replaceAll(" ", "-")}-${recipe.id}`;
-    link.textContent = "Смотреть рецепт";
+    link.textContent = "view recipe";
     link.target = "_blank";
 
     textDiv.appendChild(title);
@@ -80,7 +80,7 @@ function showRecipes(recipes) {
 document.addEventListener("DOMContentLoaded", async () => {
   const fridgeItems = await getFridgeItems();
   if (!fridgeItems.length) {
-    alert("В холодильнике пока нет сохранённых продуктов!");
+    alert("the fridge is empty!");
     return;
   }
   const recipes = await getRecipesFromAPI(fridgeItems);
