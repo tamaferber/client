@@ -1,0 +1,5 @@
+[
+  { "name": "Яйцо",    "quantity": 6 },
+  { "name": "Молоко",  "quantity": 1 },
+  { "name": "Сыр",     "quantity": 2 }
+]
