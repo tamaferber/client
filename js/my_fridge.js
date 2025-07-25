@@ -63,7 +63,7 @@ document.getElementById("saveFridgeBtn").addEventListener("click", () => {
     console.log("Items to send:", items);
   });
 
-  fetch("https://smartfridge-server.onrender.com/", {
+  fetch("https://smartfridge-server.onrender.com/api/fridge", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
