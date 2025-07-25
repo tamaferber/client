@@ -1,7 +1,7 @@
 // 1. Получаем продукты из MongoDB
 async function getFridgeItems() {
   try {
-    const res = await fetch("https://smartfridge-server.onrender.com/");
+    const res = await fetch("https://smartfridge-server.onrender.com/api/fridge");
     const data = await res.json();
     console.log("products from DB:", data);
 
