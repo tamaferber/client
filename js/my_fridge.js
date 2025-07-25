@@ -34,16 +34,17 @@ document.getElementById("saveItemDataBtn").addEventListener("click", () => {
   const expiration = expirationInput.value;
   const itemName = popup.dataset.currentImg;
 
-  const img = [...document.querySelectorAll(".items img")].find(i => i.alt === itemName);
-
+  
    fridgeData[itemName] = {
     name: itemName,
     quantity: amount,
     expirationDate: expiration
   };
   
-  // Визуально выделяем выбранный продукт (по желанию)
+ const img = [...document.querySelectorAll(".items img")].find(i => i.alt === itemName);
   if (img) img.classList.add("selected");
+
+    popup.style.display = "none";
 
   });
 
@@ -51,14 +52,12 @@ document.getElementById("saveItemDataBtn").addEventListener("click", () => {
   const items = Object.values(fridgeData);
 console.log("✅ Items to send:", items);
 
+
 if (items.length === 0) {
   showMessage("No items selected!", true);
   return;
 }
   
-    //testing delete
-    console.log("Items to send:", items);
-
   fetch("https://smartfridge-server.onrender.com/api/fridge", {
     method: "POST",
     headers: {
