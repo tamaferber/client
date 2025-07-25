@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../css/layout/header.css">
   <link rel="stylesheet" href="../css/layout/footer.css">
   <link rel="stylesheet" href="../css/pages/usersAdmin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -134,11 +136,25 @@
 
     <div class="edit-name-popup hidden">
         <div class="popup-box">
-            <h3>Edit user name:</h3>
-            <input type="text" id="editUserName" />
+            <h3>Edit user info:</h3>
+            <label for="editUserName">name:</label>
+            <input type="name" id="editUserName" />
+
+            <label for="editUserEmail">Email:</label>
+            <input type="email" id="editUserEmail" />
+
+            <label for="editUserAddress">Address:</label>
+            <input type="text" id="editUserAddress" />
+
+            <label for="editUserStatus">Status:</label>
+            <select id="editUserStatus">
+              <option value="unblocked">Unblocked</option>
+              <option value="blocked">Blocked</option>
+            </select>
+
             <div class="popup-buttons">
-                <button class="cancel-edit-name">Cancel</button>
-                <button class="confirm-edit-name">Save</button>
+              <button class="cancel-edit-name">Cancel</button>
+              <button class="confirm-edit-name">Save</button>
             </div>
         </div>
     </div>
@@ -146,12 +162,14 @@
 
   <footer class="footer">
     <nav class="bottom-nav">
-      <a href="./adminSettings.html"><img src="../images/settingsICON.png" alt="Settings"></a>
       <a href="../pages/profile.html"><img src="../images/profileICON.png" alt="Profile"></a>
       <a href="./menuAdmin.html"><img src="../images/homeICON.png" alt="Home"></a>
     </nav>
   </footer>
 
-  <script src="../js/users.js"></script>
+  <script src="../js/usersAdmin.js"></script>
 </body>
 </html>
+
+
+
