@@ -2,6 +2,7 @@ const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 const amountInput = document.getElementById("amountInput");
 const expirationInput = document.getElementById("expirationInput");
+const fridgeData = {};
 
 // פתיחת חלונית לכל מוצר
 document.querySelectorAll(".items img").forEach(img => {
@@ -35,33 +36,28 @@ document.getElementById("saveItemDataBtn").addEventListener("click", () => {
 
   const img = [...document.querySelectorAll(".items img")].find(i => i.alt === itemName);
 
-  if (img) {
-    img.dataset.quantity = amount;
-    img.dataset.expiration = expiration;
-  }
+   fridgeData[itemName] = {
+    name: itemName,
+    quantity: amount,
+    expirationDate: expiration
+  };
+  
+  // Визуально выделяем выбранный продукт (по желанию)
+  if (img) img.classList.add("selected");
 
-  popup.style.display = "none";
-});
+  });
 
+  document.getElementById("saveFridgeBtn").addEventListener("click", () => {
+  const items = Object.values(fridgeData);
+console.log("✅ Items to send:", items);
 
-document.getElementById("saveFridgeBtn").addEventListener("click", () => {
-  const items = [];
-
-  document.querySelectorAll(".items img").forEach(img => {
-    const name = img.alt;
-    const quantity = img.dataset.quantity || 0;
-    const expirationDate = img.dataset.expiration || "";
-
-    if (quantity && expirationDate) {
-      items.push({
-        name,
-        quantity,
-        expirationDate
-      });
-    }
+if (items.length === 0) {
+  showMessage("No items selected!", true);
+  return;
+}
+  
     //testing delete
     console.log("Items to send:", items);
-  });
 
   fetch("https://smartfridge-server.onrender.com/api/fridge", {
     method: "POST",
