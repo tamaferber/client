@@ -22,6 +22,8 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     overflow-x: visible;
+    /* test */
+    text-decoration: none;
 }
 
 main.recipes-container {
