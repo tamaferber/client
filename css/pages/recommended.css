@@ -58,13 +58,16 @@ body{
   height: auto;
 }
 
-h2{
-  position: relative;
-  font-size: 12px;
+
+h2 {
+  font-size: 14px;
+  font-weight: normal;
   color: #162042;
-  top: 120px;
-  left: 38px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
+
 
 .recipes-grid {
   display: flex;
