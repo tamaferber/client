@@ -47,6 +47,24 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+        // בדיקה אם המשתמש כבר קיים לפי המייל
+    const checkRes = await fetch(`https://smartfridge-server.onrender.com/api/users?email=${encodeURIComponent(email)}`);
+
+    if (!checkRes.ok) {
+      errorMessage.textContent = "Error checking existing user.";
+      errorMessage.classList.remove('hidden');
+      return;
+    }
+
+    const existingUsers = await checkRes.json();
+
+    if (existingUsers.length > 0) {
+      // אם המשתמש כבר קיים – מדלגים על הוספה
+      window.location.href = '/user/home.html';
+      return;
+    }
+
+
 
     try {
       const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
