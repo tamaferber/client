@@ -12,6 +12,11 @@ html, body {
   overflow-y: auto;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+}
 
 body{
     background-image:url(../../images/rec.jpg);
