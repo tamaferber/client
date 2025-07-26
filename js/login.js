@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
 
+//debaging
+    console.log("EMAIL:", email === 'admin@gmail.com', email);
+
     if (email === 'admin@gmail.com') {
       try {
         const adminRes = await fetch("https://smartfridge-server.onrender.com/api/admin/login", {
