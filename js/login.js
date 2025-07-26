@@ -14,8 +14,10 @@
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const form     = document.getElementById('loginForm');
+  const form = document.getElementById('loginForm');
   const loginBtn = document.getElementById('loginBtn');
+  const errorMessage = document.getElementById('errorMessage');
+
 
   loginBtn.addEventListener('click', async (e) => {
     e.preventDefault(); // כדי למנוע שליחה אוטומטית
@@ -39,6 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
       status: "unblocked"
     };
 
+    if (!password) {
+      errorMessage.textContent = "Please enter your password.";
+      errorMessage.classList.remove('hidden');
+      return;
+    }
+
+
     try {
       const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
         method: "POST",
@@ -60,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      
     window.location.href = '/user/home.html';
   });
 });
