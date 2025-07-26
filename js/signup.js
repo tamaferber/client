@@ -1,39 +1,3 @@
-// // signup.js
-// document.addEventListener('DOMContentLoaded', () => {
-//   const form = document.getElementById('signupForm');
-//   const btn  = document.getElementById('signupbtn');
-//   const pwd  = document.getElementById('password');
-//   const pwd2 = document.getElementById('password2');
-
-  
-//   function setPasswordValidity() {
-//     if (pwd2.value !== '' && pwd.value !== pwd2.value) {
-//       pwd2.setCustomValidity('Пароли не совпадают');
-//     } else {
-//       pwd2.setCustomValidity('');
-//     }
-//   }
-
-  
-//   form.addEventListener('input', () => {
-//     setPasswordValidity();
-//   });
-
- 
-//   btn.addEventListener('click', () => {
-//     setPasswordValidity();
-    
-  
-//     if (!form.reportValidity()) {
-//       return;
-//     }
-
-//     window.location.href = form.action;
-//   });
-// });
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('signupForm');
   const btn = document.getElementById('signupbtn');
@@ -62,15 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = usernameInput.value.trim();
     const password = pwd.value.trim();
 
+    errorMessage.classList.add('hidden');
+    errorMessage.textContent = "";
+
     try {
       //  בדיקה אם המשתמש כבר קיים לפי המייל
       const checkRes = await fetch(`https://smartfridge-server.onrender.com/api/users?email=${encodeURIComponent(email)}`);
       const existingUsers = await checkRes.json();
 
       if (existingUsers.length > 0) {
-        alert("⚠️ Email already exists. Please use a different one.");
+        errorMessage.textContent = "Email already exists. Please use a different one.";
+        errorMessage.classList.remove('hidden');
         return;
       }
+
 
       //  אם לא קיים – מוסיפים לDB 
       const newUser = {
