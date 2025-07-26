@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
     }
-
+//debaging
+      console.log("⛔ This should NOT be reached after admin login");
 
 
     if (!password) {
