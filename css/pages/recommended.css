@@ -13,10 +13,14 @@ html, body {
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    gap: 90px;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* קטן יותר */
+  max-width: 100%;
+  padding: 10px;
+  overflow: hidden;
 }
+
 
 body{
     background-image:url(../../images/rec.jpg);
@@ -40,11 +44,18 @@ body{
 }
 
 
-header h1 {
+.header-content h1 {
   font-size: 24px;
-  font-weight: bold;
-  color: #000;
-  margin: 0;
+  color: #162042;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.header-content img {
+  width: 24px;
+  height: auto;
 }
 
 h2{
