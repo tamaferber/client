@@ -12,6 +12,15 @@ html, body {
   overflow-y: auto;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 75px; /* קטן יותר */
+  max-width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+
 
 body{
     background-image:url(../../images/rec.jpg);
@@ -35,14 +44,18 @@ body{
 }
 
 
-header h1 {
-  position: relative;
-  font-size: 28px;
+.header-content h1 {
+  font-size: 24px;
   color: #162042;
-  top: 43px;
-  left: 88px;
-  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+
+.header-content img {
+  width: 24px;
+  height: auto;
 }
 
 
