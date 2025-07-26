@@ -1,33 +1,104 @@
-// signup.js
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('signupForm');
-  const btn  = document.getElementById('signupbtn');
-  const pwd  = document.getElementById('password');
-  const pwd2 = document.getElementById('password2');
+// // signup.js
+// document.addEventListener('DOMContentLoaded', () => {
+//   const form = document.getElementById('signupForm');
+//   const btn  = document.getElementById('signupbtn');
+//   const pwd  = document.getElementById('password');
+//   const pwd2 = document.getElementById('password2');
 
   
+//   function setPasswordValidity() {
+//     if (pwd2.value !== '' && pwd.value !== pwd2.value) {
+//       pwd2.setCustomValidity('Пароли не совпадают');
+//     } else {
+//       pwd2.setCustomValidity('');
+//     }
+//   }
+
+  
+//   form.addEventListener('input', () => {
+//     setPasswordValidity();
+//   });
+
+ 
+//   btn.addEventListener('click', () => {
+//     setPasswordValidity();
+    
+  
+//     if (!form.reportValidity()) {
+//       return;
+//     }
+
+//     window.location.href = form.action;
+//   });
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('signupForm');
+  const btn = document.getElementById('signupbtn');
+  const pwd = document.getElementById('password');
+  const pwd2 = document.getElementById('password2');
+  const emailInput = document.getElementById('email');
+  const usernameInput = document.getElementById('username');
+
   function setPasswordValidity() {
     if (pwd2.value !== '' && pwd.value !== pwd2.value) {
-      pwd2.setCustomValidity('Пароли не совпадают');
+      pwd2.setCustomValidity('Passwords do not match');
     } else {
       pwd2.setCustomValidity('');
     }
   }
 
-  
-  form.addEventListener('input', () => {
-    setPasswordValidity();
-  });
+  form.addEventListener('input', setPasswordValidity);
 
- 
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault(); 
+
     setPasswordValidity();
-    
-  
-    if (!form.reportValidity()) {
-      return;
+    if (!form.reportValidity()) return;
+
+    const email = emailInput.value.trim();
+    const username = usernameInput.value.trim();
+    const password = pwd.value.trim();
+
+    try {
+      //  בדיקה אם המשתמש כבר קיים לפי המייל
+      const checkRes = await fetch(`https://smartfridge-server.onrender.com/api/users?email=${encodeURIComponent(email)}`);
+      const existingUsers = await checkRes.json();
+
+      if (existingUsers.length > 0) {
+        alert("⚠️ Email already exists. Please use a different one.");
+        return;
+      }
+
+      //  אם לא קיים – מוסיפים לDB 
+      const newUser = {
+        name: username,
+        email,
+        address: "not provided",
+        status: "unblocked"
+      };
+
+      const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newUser)
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to add user");
+      }
+
+      //   ניתוב לדף הבית
+      window.location.href = "home.html";
+
+    } catch (err) {
+      console.error("Signup error:", err);
+      alert("Something went wrong. Please try again later.");
     }
-
-    window.location.href = form.action;
   });
 });
+
