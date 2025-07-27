@@ -17,34 +17,30 @@
 <body  class="log-in">
 
   <section class="wrapper">
+    <p id="errorMessage" class="error-message hidden">User already exists</p>
     <form id="signupForm" action="home.html" method="get">
       <h1>Sign up</h1>
 
-<section class="form-container">
-      <section class="input-box">
+      <section class="form-container">
+        <section class="input-box">
 
-        <span class="details">username</span>
-        <input id="username" name="username" type="text" required>
+          <span class="details">username</span>
+          <input id="username" name="username" type="text" required>
 
-        <span class="details">password</span>
-        <input id="password" name="password" type="password" required>
+          <span class="details">password</span>
+          <input id="password" name="password" type="password" required>
 
-        <span class="details">veridy password</span>
-         <input id="password2" name="password2" type="password" required>
+          <span class="details">veridy password</span>
+          <input id="password2" name="password2" type="password" required>
 
-        <span class="details">gmail</span>
-      <input id="email" name="email" type="email" required>
+          <span class="details">gmail</span>
+          <input id="email" name="email" type="email" required>
 
+        </section>
+        <button id="signupbtn" type="submit" class="btn"> Sign up</button>
       </section>
-
-     <button id="signupbtn" type="submit" class="btn"> Sign up</button>
-     <p id="errorMessage" class="error-message hidden">User already exists</p>
-
-
-</section>
-       </form> 
-    </section>
-
+    </form> 
+  </section>
 
 </body>
 
