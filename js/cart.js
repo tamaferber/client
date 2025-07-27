@@ -6,6 +6,7 @@ window.onload = function () {
     container.innerHTML = '<p style="text-align:center;">Your cart is empty 🛒</p>';
     return;
   }
+ let total=0;
 
   cart.forEach(item => {
     const card = document.createElement('div');
@@ -20,5 +21,13 @@ window.onload = function () {
   </div>
 `;
     container.appendChild(card);
+    total += item.price * (item.qty || 1);
   });
+
+   const totalBar = document.createElement("div");
+  totalBar.className = "cart-total-bar";
+  totalBar.innerHTML = `<p>Total: <span id="cart-total">₪${total}</span></p>`;
+  document.body.appendChild(totalBar);
 };
+
+
