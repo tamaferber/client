@@ -11,10 +11,14 @@ window.onload = function () {
     const card = document.createElement('div');
     card.className = 'product-cart';
     card.innerHTML = `
-      <img src="${item.imgSrc}" alt="${item.name}" />
+  <div class="cart-content">
+    <img src="${item.imgSrc}" alt="${item.name}" />
+    <div class="cart-text">
       <p>${item.name}</p>
       <p>${item.price}$</p>
-    `;
+    </div>
+  </div>
+`;
     container.appendChild(card);
   });
 };
