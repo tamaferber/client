@@ -145,34 +145,6 @@ header h1 {
   color: #333;
 }
 
-/* .add-recipe-section {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  z-index: 1000;
-} */
-/* 
-.add-recipe-btn {
-  position: fixed;
-  bottom: 90px;
-  left: 27px;
-  background: none;
-  border: none;
-  padding: 0;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.add-recipe-btn img {
-  width: 50px;
-  height: 50px;
-}
-
-#addRecipePopup .popup-content {
-  max-width: 500px;
-  max-height: 80vh;
-} */
-
 .popup-content input[type="text"],
 .popup-content input[type="file"],
 .popup-content textarea {

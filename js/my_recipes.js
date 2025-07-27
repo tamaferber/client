@@ -367,21 +367,3 @@ function submitNewRecipe() {
 
 
 
-// פתיחת חלונית הוספת מתכון
-// const addRecipeBtn = document.getElementById("addRecipeBtn");
-// const addRecipePopup = document.getElementById("addRecipePopup");
-// const closeAddPopup = document.getElementById("closeAddPopup");
-
-// addRecipeBtn.addEventListener("click", () => {
-//   addRecipePopup.classList.remove("hidden");
-// });
-
-// closeAddPopup.addEventListener("click", () => {
-//   addRecipePopup.classList.add("hidden");
-// });
-
-// window.addEventListener("click", (e) => {
-//   if (e.target === addRecipePopup) {
-//     addRecipePopup.classList.add("hidden");
-//   }
-// });
