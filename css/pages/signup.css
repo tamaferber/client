@@ -141,18 +141,30 @@ h1 {
   color: rgba(23, 4, 78, 1);
 }
 
-.error-message {
+/* .error-message {
   color: rgb(211, 56, 56);
   background-color: #ffe0e0;
   padding: 10px;
   border: 1px solid rgb(211, 56, 56);
   border-radius: 5px;
-  /* margin-top: 4px; */
   text-align: center;
   font-weight: bold;
-  /* margin-top: 50px; */
-  height: auto;
 
+} */
+.error-message {
+  position: absolute;           /* כדי לאפשר מיקום מדויק */
+  top: 65px;                    /* מרחק מהחלק העליון של הדף */
+  left: 50%;                    /* ממרכז את ההודעה */
+  transform: translateX(-50%);  /* ממרכז בדיוק לפי הרוחב שלה */
+
+  color: rgb(211, 56, 56);
+  background-color: #ffe0e0;
+  padding: 10px 20px;
+  border: 1px solid rgb(211, 56, 56);
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  z-index: 1000;                /* כדי לוודא שתהיה מעל כל דבר אחר */
 }
 
 .hidden {
