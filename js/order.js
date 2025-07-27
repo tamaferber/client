@@ -35,6 +35,24 @@ function decreaseQty() {
   }
 }
 
+function addToCartFromPopup() {
+  const name = document.getElementById('popupName').textContent;
+  const priceText = document.getElementById('popupPrice').textContent;
+  const price = parseInt(priceText.replace('$', ''));
+  const imgSrc = document.getElementById('popupImage').getAttribute('src');
+  const qty = parseInt(document.getElementById('popupQty').textContent);
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+ 
+  cart.push({ name, price, imgSrc, qty });
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${qty} x ${name} added to cart`);
+}
+
+
+
 closePopupBtn.addEventListener('click', closePopup);
 
 window.addEventListener("click", (e) => {
