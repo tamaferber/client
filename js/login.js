@@ -71,13 +71,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const existingUsers = await checkRes.json();
 
       if (existingUsers.length === 0) {
-        const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(userData)
-        });
+        // const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify(userData)
+        // });
 
-        if (!res.ok) throw new Error("Failed to add user");
+        // if (!res.ok) throw new Error("Failed to add user");
+        errorMessage.textContent = "No account found. Redirecting to sign-up...";
+        errorMessage.classList.remove("hidden");
+
+        setTimeout(() => {
+          window.location.href = "/user/signup.html";
+        }, 2000); 
+        return;
       }
 
       console.log("✅ Redirecting user to home...");
