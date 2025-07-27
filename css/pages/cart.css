@@ -87,7 +87,7 @@ header h1 {
 .cart-total-bar {
   position: fixed;
   top: 778px;
-  left: 0;
+  left: 132px;
   width: 149px;
   height: 38px;
   background-color: rgba(255, 255, 255, 0.9);
@@ -97,4 +97,5 @@ header h1 {
   font-size: 20px;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  border-radius: 10px;
 }
