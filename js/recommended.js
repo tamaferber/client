@@ -30,25 +30,31 @@ async function getRecipesFromAPI(ingredients) {
 }
 
 // 3. Рендеринг рецептов на страницу
-function showRecipes(recipes) {
+async function showRecipes(recipes) {
   const container = document.getElementById("recipesContainer");
-  container.innerHTML = ""; // очищаем перед обновлением
+  container.innerHTML = "";
 
   if (!recipes.length) {
     container.innerHTML = "<p>recipes not found</p>";
     return;
   }
 
-  recipes.forEach(recipe => {
+  for (const recipe of recipes) {
     const card = document.createElement("div");
     card.classList.add("recipe-card");
 
-    // Блок с текстом
     const textDiv = document.createElement("div");
     textDiv.classList.add("recipe-text");
 
     const title = document.createElement("h3");
     title.textContent = recipe.title;
+
+    const summaryHTML = await getRecipeSummary(recipe.id);
+    const summaryText = summaryHTML ? stripHTML(summaryHTML).slice(0, 100) + "..." : "";
+
+    const summaryP = document.createElement("p");
+    summaryP.classList.add("description");
+    summaryP.textContent = summaryText;
 
     const description = document.createElement("p");
     description.textContent = `products in usage: ${recipe.usedIngredientCount}, additional: ${recipe.missedIngredientCount}`;
@@ -59,20 +65,19 @@ function showRecipes(recipes) {
     link.target = "_blank";
 
     textDiv.appendChild(title);
+    textDiv.appendChild(summaryP);  // תיאור
     textDiv.appendChild(description);
     textDiv.appendChild(link);
 
-    // Картинка
     const img = document.createElement("img");
     img.src = recipe.image;
     img.alt = recipe.title;
 
-    // Собираем карточку
     card.appendChild(textDiv);
     card.appendChild(img);
 
     container.appendChild(card);
-  });
+  }
 }
 
 
@@ -86,3 +91,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   const recipes = await getRecipesFromAPI(fridgeItems);
   showRecipes(recipes);
 });
+
+
+async function getRecipeSummary(id) {
+  const apiKey = "bf26187e69f14d079d662a8e04c545ea";
+  const url = `https://api.spoonacular.com/recipes/${id}/summary?apiKey=${apiKey}`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    return data.summary;
+  } catch (err) {
+    console.error("error getting summary:", err);
+    return null;
+  }
+}
+
+function stripHTML(html) {
+  const div = document.createElement("div");
+  div.innerHTML = html;
+  return div.textContent || div.innerText || "";
+}
