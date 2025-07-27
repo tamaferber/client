@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => {
           window.location.href = "/user/signup.html";
-        }, 2000); 
+        }, 4000); 
         return;
       }
 
