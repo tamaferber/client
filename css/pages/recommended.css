@@ -109,3 +109,8 @@ h2 {
   color: #555;
 }
 
+.description {
+  font-size: 13px;
+  color: #444;
+  margin: 5px 0;
+}
