@@ -145,13 +145,13 @@ header h1 {
   color: #333;
 }
 
-.add-recipe-section {
+/* .add-recipe-section {
   position: fixed;
   bottom: 100px;
   right: 20px;
   z-index: 1000;
-}
-
+} */
+/* 
 .add-recipe-btn {
   position: fixed;
   bottom: 90px;
@@ -171,7 +171,7 @@ header h1 {
 #addRecipePopup .popup-content {
   max-width: 500px;
   max-height: 80vh;
-}
+} */
 
 .popup-content input[type="text"],
 .popup-content input[type="file"],
