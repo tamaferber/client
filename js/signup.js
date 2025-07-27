@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const pwd2 = document.getElementById('password2');
   const emailInput = document.getElementById('email');
   const usernameInput = document.getElementById('username');
+  const errorMessage = document.getElementById('errorMessage');
+
 
   function setPasswordValidity() {
     if (pwd2.value !== '' && pwd.value !== pwd2.value) {
@@ -36,7 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (existingUsers.length > 0) {
         errorMessage.textContent = "Email already exists. Please use a different one.";
+        console.log("Email already exists!");
         errorMessage.classList.remove('hidden');
+
+          // מחכה 2 שניות לפני שמעביר לדף ההתחברות
+        setTimeout(() => {
+        window.location.href = "index.html";
+        }, 2000);
+
         return;
       }
 
