@@ -13,7 +13,8 @@ function openPopup(name, price, imageSrc) {
   popupImage.src = imageSrc;
   popupImage.alt = name;
   popupName.textContent = name;
-  popupPrice.textContent = Price;
+  popupPrice.textContent = `₪${price}`;
+  popupPrice.setAttribute("data-price", price);
   currentQty = 1;
   popupQty.textContent = currentQty;
   popup.classList.remove('hidden');
@@ -37,8 +38,7 @@ function decreaseQty() {
 
 function addToCartFromPopup() {
   const name = document.getElementById('popupName').textContent;
-  const priceText = document.getElementById('popupPrice').textContent;
-  const price = parseInt(priceText.replace('$', ''));
+  const price = parseInt(document.getElementById('popupPrice').getAttribute("data-price"));
   const imgSrc = document.getElementById('popupImage').getAttribute('src');
   const qty = parseInt(document.getElementById('popupQty').textContent);
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
