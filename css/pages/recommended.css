@@ -61,12 +61,13 @@ body{
 
 h2 {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: bold;
   color: #162042;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
 
 
 .recipes-grid {
@@ -87,7 +88,7 @@ h2 {
 
 
 .recipe-card img {
-  width: 120px;
+  width: 70px;
   height: auto;
   border-radius: 8px;
 }
