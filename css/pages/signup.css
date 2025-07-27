@@ -139,3 +139,20 @@ h1 {
   text-decoration: underline;
   color: rgba(23, 4, 78, 1);
 }
+
+.error-message {
+  color: rgb(211, 56, 56);
+  background-color: #ffe0e0;
+  padding: 10px;
+  border: 1px solid rgb(211, 56, 56);
+  border-radius: 5px;
+  margin-top: 4px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
