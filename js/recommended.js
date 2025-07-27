@@ -81,13 +81,13 @@ async function showRecipes(recipes) {
 }
 
 
-// 4. Запуск при загрузке страницы
 document.addEventListener("DOMContentLoaded", async () => {
   const fridgeItems = await getFridgeItems();
   if (!fridgeItems.length) {
-    alert("the fridge is empty!");
+    showCustomPopup("The fridge is empty!");
     return;
   }
+
   const recipes = await getRecipesFromAPI(fridgeItems);
   showRecipes(recipes);
 });
@@ -111,4 +111,18 @@ function stripHTML(html) {
   const div = document.createElement("div");
   div.innerHTML = html;
   return div.textContent || div.innerText || "";
+}
+
+
+function showCustomPopup(message) {
+  const popup = document.getElementById("customPopup");
+  const messageElem = document.getElementById("popupMessage");
+  const closeBtn = document.getElementById("popupCloseBtn");
+
+  messageElem.innerText = message;
+  popup.classList.remove("hidden");
+
+  closeBtn.onclick = () => {
+    popup.classList.add("hidden");
+  };
 }
