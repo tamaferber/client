@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // מחכה 2 שניות לפני שמעביר לדף ההתחברות
         setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "../index.html";
         }, 2000);
 
         return;

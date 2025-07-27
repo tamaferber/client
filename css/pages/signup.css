@@ -78,7 +78,8 @@ h1 {
   left: 50%;                      
   transform: translateX(-50%);
   width: 350px;
-  height: 458px;
+  /* height: 458px; */
+  height: auto;
   border: 1px solid rgba(23, 4, 78, 1);
   border-radius: 20px;
   padding: 20px;
@@ -149,7 +150,9 @@ h1 {
   /* margin-top: 4px; */
   text-align: center;
   font-weight: bold;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  height: auto;
+
 }
 
 .hidden {
