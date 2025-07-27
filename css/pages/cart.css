@@ -99,3 +99,17 @@ header h1 {
   z-index: 1000;
   border-radius: 10px;
 }
+
+.total-label {
+  font-weight: bold;
+  color: #162042;
+}
+
+.total-box {
+  background-color: white;
+  padding: 6px 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+  font-size: 18px;
+  font-weight: 600;
+}
