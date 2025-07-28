@@ -47,7 +47,7 @@ function addToCartFromPopup() {
   cart.push({ name, price, imgSrc, qty });
 
   localStorage.setItem('cart', JSON.stringify(cart));
-  alert(`${qty} x ${name} added to cart`);
+  showToast(`${qty} × ${name} added to list`);
 }
 
 
@@ -59,3 +59,16 @@ window.addEventListener("click", (e) => {
     popup.classList.add("hidden");
   }
 });
+
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.classList.add("hidden"), 300); 
+  }, 2500); 
+}
