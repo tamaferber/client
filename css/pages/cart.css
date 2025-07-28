@@ -98,8 +98,8 @@ header h1 {
   text-align: center;
 }
 
-.cart-total-wrapper {
-  position: fixed;
+.cart-total-bar {
+  position: relative;
   top: 778px;
   left: 132px;
   display: flex;
