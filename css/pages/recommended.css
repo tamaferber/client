@@ -15,7 +15,7 @@ html, body {
 .header-content {
   display: flex;
   align-items: center;
-  gap: 70px; /* קטן יותר */
+  gap: 70px; 
   max-width: 100%;
   padding: 10px;
   overflow: hidden;

@@ -1,11 +1,10 @@
-// 1. Получаем продукты из MongoDB
+// 1.  MongoDBמקבלים את המוצק מ MongoDB
 async function getFridgeItems() {
   try {
     const res = await fetch("https://smartfridge-server.onrender.com/api/fridge");
     const data = await res.json();
     console.log("products from DB:", data);
 
-    // нам нужны только названия продуктов
     return data.map(item => item.name.toLowerCase());
   } catch (err) {
     console.error("error getting products:", err);
@@ -13,9 +12,9 @@ async function getFridgeItems() {
   }
 }
 
-// 2. Получаем рецепты из Spoonacular
+// 2. מקבליפ מתכונים מ Spoonacular
 async function getRecipesFromAPI(ingredients) {
-  const apiKey = "bf26187e69f14d079d662a8e04c545ea"; // замени на свой API key от Spoonacular
+  const apiKey = "bf26187e69f14d079d662a8e04c545ea";
   const url = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${ingredients.join(",")}&number=6&apiKey=${apiKey}`;
 
   try {
@@ -29,7 +28,7 @@ async function getRecipesFromAPI(ingredients) {
   }
 }
 
-// 3. Рендеринг рецептов на страницу
+// 3. העלת מתכונים לעמוד 
 async function showRecipes(recipes) {
   const container = document.getElementById("recipesContainer");
   container.innerHTML = "";

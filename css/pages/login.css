@@ -21,7 +21,7 @@ body{
   position: relative;
   width: 100%;
   max-width: 440px;
-  height: 956px; /* <-- фиксируем высоту, чтобы absolute работал правильно */
+  height: 956px; 
   display: flex;
   flex-direction: column;
   align-items: center;
