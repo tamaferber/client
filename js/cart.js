@@ -24,10 +24,7 @@ window.onload = function () {
     total += item.price * (item.qty || 1);
   });
 
-   const totalBar = document.createElement("div");
-  totalBar.className = "cart-total-bar";
-  totalBar.innerHTML = `<p>Total: <span id="cart-total">₪${total}</span></p>`;
-  document.body.appendChild(totalBar);
+document.getElementById("cart-total").textContent = `₪${total}`;
 };
 
 
