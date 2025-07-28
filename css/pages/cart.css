@@ -106,3 +106,10 @@ header h1 {
   color: #162042;
 }
 
+.cart-total{
+  position: relative;
+  top: 778px;
+  left: 118px;
+  font-weight:400;
+  font-size: 20px;
+}
