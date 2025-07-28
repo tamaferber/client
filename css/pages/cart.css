@@ -99,7 +99,7 @@ header h1 {
 }
 
 .cart-total-bar {
-  position: relative;
+  position: fixed;
   top: 778px;
   left: 132px;
   display: flex;
