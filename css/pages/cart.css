@@ -54,6 +54,7 @@ header h1 {
 
 .product-cart {
   width: 285px;
+  height: 100px;
   border-radius: 12px;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.34);
@@ -82,3 +83,26 @@ header h1 {
   font-weight: bold;
   text-align: center;
 }
+
+.cart-total-bar {
+  position: fixed;
+  top: 778px;
+  left: 132px;
+  width: 149px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  text-align: center;
+  font-weight:400;
+  font-size: 20px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+  gap: 14px;
+}
+
+.total-label {
+  font-weight: bold;
+  color: #162042;
+}
+
