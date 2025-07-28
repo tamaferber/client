@@ -257,23 +257,26 @@ footer img {
 
 .toast {
   position: fixed;
-  bottom: 40px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 14px 24px;
+  background-color: #9fc1db;
+  color: #003366;
+  padding: 16px 32px;
   border-radius: 10px;
   font-size: 16px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, bottom 0.3s ease;
+  transition: opacity 0.3s ease, top 0.3s ease;
   z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 240px;
+  text-align: center;
 }
 
 .toast.show {
   opacity: 1;
-  bottom: 60px;
+  top: 40px;
 }
 
 .toast.hidden {
