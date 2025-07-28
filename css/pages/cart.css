@@ -98,32 +98,30 @@ header h1 {
   text-align: center;
 }
 
-.cart-total-bar {
+.cart-total-wrapper {
   position: fixed;
   top: 778px;
   left: 132px;
-  width: 149px;
-  height: 38px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px;
-  text-align: center;
-  font-weight:400;
-  font-size: 20px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
   z-index: 1000;
-  border-radius: 10px;
-  gap: 14px;
 }
 
 .total-label {
   font-weight: bold;
   color: #162042;
+  font-size: 18px;
 }
 
-.cart-total{
-  position: relative;
-  top: 778px;
-  left: 118px;
-  font-weight:400;
-  font-size: 20px;
+.total-box {
+  background-color: white;
+  padding: 6px 20px;
+  border: 2px solid black;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  min-width: 80px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
 }
