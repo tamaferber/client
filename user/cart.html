@@ -1,54 +1,61 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-
-  <title>smart-frige</title>
+  <title>smart-fridge</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="/css/pages/cart.css">
   <link rel="stylesheet" href="/css/layout/footer.css">
   <link rel="stylesheet" href="/css/layout/header.css">
-  
-  <script src="../js/cart.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Nunito&family=Abel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
 
-
-
+  <script src="../js/cart.js" defer></script>
 </head>
-<body >
 
-<header>
-   <div class="header-content">
-                <a href="order.html">
-                    <img src="../images/back-arrow.svg" alt="Back" />
-                </a>
-                <h1>My сart</h1>
-            </div>
-</header>
+<body>
+    <header>
+      <div class="header-content">
+        <a href="order.html">
+          <img src="../images/back-arrow.svg" alt="Back" />
+        </a>
+        <h1>My cart</h1>
+      </div>
+    </header>
+  <div class="wrapper">
 
-  
-  <section class="items" id="cart-container">
-  </section>
-  
+    <!-- Cart Items -->
+    <section class="items" id="cart-container"></section>
 
-  <div class="cart-total-bar">
-    <span class="total-label">total:</span>
-    <span id="cart-total" class="total-box">18$</span>
+    <!-- Total and Clear Cart -->
+    <div class="cart-footer">
+      <div class="cart-total-bar">
+        <span class="total-label">total:</span>
+        <span id="cart-total" class="total-box">0$</span>
+      </div>
+      <button id="resetCartBtn" class="reset-btn">Clear Cart</button>
+    </div>
+
+    <!-- Footer Navigation -->
+    <footer class="bottom-nav">
+      <nav class="bottom-nav">
+        <a href="../user/home.html"><img src="../images/homeICON.png" alt="Home" /></a>
+      </nav>
+    </footer>
   </div>
 
-  
-
-
-<footer class="bottom-nav">
-  <nav class="bottom-nav">
-
-            <a href="../user/home.html"><img src="../images/homeICON.png" alt="Home" /></a>
-
-        </nav>
-</footer>
-</section>
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <p id="confirmText">Are you sure you want to delete this item?</p>
+      <div class="modal-buttons">
+        <button id="confirmYes">Yes</button>
+        <button id="confirmNo">Cancel</button>
+      </div>
+    </div>
+  </div>
 </body>
-
 
 </html>

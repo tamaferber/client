@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value.trim();
     const email = rawEmail.trim().toLowerCase();
 
-    console.log("📥 ENTERED EMAIL:", rawEmail);
-    console.log("✅ Normalized EMAIL:", email);
+    console.log(" ENTERED EMAIL:", rawEmail);
+    console.log(" Normalized EMAIL:", email);
 
     if (email === 'admin@gmail.com') {
-      console.log("🚪 Trying ADMIN login...");
+      console.log(" Trying ADMIN login...");
       try {
         const adminRes = await fetch("https://smartfridge-server.onrender.com/api/admin/login", {
           method: "POST",
@@ -71,13 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const existingUsers = await checkRes.json();
 
       if (existingUsers.length === 0) {
-        // const res = await fetch("https://smartfridge-server.onrender.com/api/users", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify(userData)
-        // });
-
-        // if (!res.ok) throw new Error("Failed to add user");
         errorMessage.textContent = "No account found. Redirecting to sign-up...";
         errorMessage.classList.remove("hidden");
 
@@ -87,7 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      localStorage.setItem("loggedInUser", JSON.stringify(existingUsers[0]));
+
       console.log("✅ Redirecting user to home...");
+      localStorage.setItem("currentUserEmail", email);
       window.location.href = '/user/home.html';
 
     } catch (err) {

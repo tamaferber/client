@@ -36,19 +36,60 @@ function decreaseQty() {
   }
 }
 
-function addToCartFromPopup() {
+async function saveCartToServer(cartItems, email) {
+  const formattedCart = cartItems.map(item => ({
+    name: item.name,
+    price: item.price,
+    quantity: item.qty,
+    imgSrc: item.imgSrc,
+    email: email
+  }));
+
+  try {
+    const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formattedCart)
+    });
+
+    if (!res.ok) throw new Error("Failed to save cart");
+    console.log("Cart saved for:", email);
+  } catch (err) {
+    console.error("Error saving cart:", err);
+  }
+}
+
+
+async function addToCartFromPopup() {
   const name = document.getElementById('popupName').textContent;
   const price = parseInt(document.getElementById('popupPrice').getAttribute("data-price"));
   const imgSrc = document.getElementById('popupImage').getAttribute('src');
   const qty = parseInt(document.getElementById('popupQty').textContent);
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const email = localStorage.getItem('currentUserEmail');
 
- 
-  cart.push({ name, price, imgSrc, qty });
+  if (!email) {
+    alert("You must be logged in to save your cart.");
+    return;
+  }
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  //  שמירה לפי משתמש
+  const cartKey = `cart_${email}`;
+  let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ name, price, imgSrc, qty });
+  }
+
+  localStorage.setItem(cartKey, JSON.stringify(cart));
+  await saveCartToServer(cart, email);
   showToast(`${qty} × ${name} added to list`);
 }
+
 
 
 
@@ -72,3 +113,31 @@ function showToast(message) {
     setTimeout(() => toast.classList.add("hidden"), 300); 
   }, 2500); 
 }
+
+async function saveCartToServer(cartItems, email) {
+  const formattedCart = cartItems.map(item => ({
+    name: item.name,
+    price: item.price,
+    quantity: item.qty,
+    imgSrc: item.imgSrc,
+    email: email
+  }));
+
+  try {
+    const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formattedCart)
+    });
+
+    if (!res.ok) throw new Error("Failed to save cart");
+    console.log("Cart saved for:", email);
+  } catch (err) {
+    console.error("Error saving cart:", err);
+  }
+}
+
+
+

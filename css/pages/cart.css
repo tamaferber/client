@@ -6,15 +6,12 @@
 }
 
 body{
-   background-image:url(/images/ginny-rose-stewart-_kUCAyYFVBI-unsplash.jpg);
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    text-decoration: none;
-
-  }
-
-
+  background-image:url(/images/ginny-rose-stewart-_kUCAyYFVBI-unsplash.jpg);
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
 
 .wrapper {
   position: relative;
@@ -48,7 +45,7 @@ header {
 .header-content {
     display: flex;
     align-items: center;
-    gap: 90px;
+    gap: 125px;
 }
 
 header h1 {
@@ -100,15 +97,11 @@ header h1 {
 }
 
 .cart-total-bar {
-  position: sticky;
-  bottom: 80px;
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 1000;
-  margin-left: 137px;
-  margin-right: auto;
 }
+
 
 .total-label {
   font-weight: bold;
@@ -127,3 +120,112 @@ header h1 {
   min-width: 80px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
 }
+
+
+
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  font-family: "Maven Pro", sans-serif;
+}
+
+.modal-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#confirmYes {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+#confirmNo {
+  background-color: #dee2e6;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
+.reset-cart-container {
+  /* position: fixed; */
+  bottom: 80px; /* כדי לא להתנגש עם הניווט */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+}
+
+
+.reset-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.reset-btn:hover {
+  background-color: #e60000;
+}
+
+
+.bottom-fixed-bar {
+  position: fixed;
+  bottom: 70px; /* כדי לא להפריע לניווט */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 100px; /* כדי לא להתנגש עם הניווט */
+  gap: 10px;
+}
+
+

@@ -69,6 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!res.ok) {
         throw new Error("Failed to add user");
       }
+      //שמירה בלןקאל סטורג
+      localStorage.setItem("loggedInUser", JSON.stringify(newUser));
+      localStorage.setItem("currentUserEmail", email);
 
       //   ניתוב לדף הבית
       window.location.href = "home.html";
