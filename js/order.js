@@ -120,13 +120,15 @@ async function saveCartToServer(cartItems, email) {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          name: item.name,
-          price: item.price,
-          quantity: item.qty,
-          imgSrc: item.imgSrc,
-          email: email
-        })
+        body: JSON.stringify([
+          {
+            name: item.name,
+            price: item.price,
+            quantity: item.qty,
+            imgSrc: item.imgSrc,
+            email: email
+          }
+        ])
       });
 
       if (!res.ok) throw new Error(`Failed to save item: ${item.name}`);
