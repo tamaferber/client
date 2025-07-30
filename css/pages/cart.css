@@ -96,16 +96,6 @@ header h1 {
   text-align: center;
 }
 
-/* .cart-total-bar {
-  position: sticky;
-  bottom: 80px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 1000;
-  margin-left: 137px;
-  margin-right: auto;
-} */
 .cart-total-bar {
   display: flex;
   align-items: center;
