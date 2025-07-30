@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById('password').value.trim();
     const email = rawEmail.trim().toLowerCase();
 
-    console.log("📥 ENTERED EMAIL:", rawEmail);
-    console.log("✅ Normalized EMAIL:", email);
+    console.log(" ENTERED EMAIL:", rawEmail);
+    console.log(" Normalized EMAIL:", email);
 
     if (email === 'admin@gmail.com') {
-      console.log("🚪 Trying ADMIN login...");
+      console.log(" Trying ADMIN login...");
       try {
         const adminRes = await fetch("https://smartfridge-server.onrender.com/api/admin/login", {
           method: "POST",
