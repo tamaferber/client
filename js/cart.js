@@ -264,7 +264,7 @@ window.onload = async function () {
   }
 
   // שליחה לשרת (בסוף טעינה)
-  saveCartToServer(mergedCart, email);
+  // saveCartToServer(mergedCart, email);
 };
 
 // 📨 פונקציית שמירה לשרת
