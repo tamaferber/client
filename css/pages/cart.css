@@ -188,10 +188,13 @@ header h1 {
 
 
 .reset-cart-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  position: fixed;
+  bottom: 80px; /* כדי לא להתנגש עם הניווט */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
 }
+
 
 .reset-btn {
   background-color: #ff4d4d;

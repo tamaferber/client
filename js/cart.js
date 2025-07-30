@@ -3,7 +3,7 @@ window.onload = function () {
   const container = document.getElementById('cart-container');
 
   if (cart.length === 0) {
-    container.innerHTML = '<p style="text-align:center;">Your cart is empty 🛒</p>';
+    container.innerHTML = '<p style="text-align:center;">Your cart is empty </p>';
 
     const totalBar = document.querySelector('.cart-total-bar');
     if (totalBar) totalBar.style.display = 'none';
