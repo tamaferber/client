@@ -6,15 +6,12 @@
 }
 
 body{
-   background-image:url(/images/ginny-rose-stewart-_kUCAyYFVBI-unsplash.jpg);
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    text-decoration: none;
-
-  }
-
-
+  background-image:url(/images/ginny-rose-stewart-_kUCAyYFVBI-unsplash.jpg);
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
 
 .wrapper {
   position: relative;
