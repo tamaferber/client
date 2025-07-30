@@ -188,7 +188,7 @@ header h1 {
 
 
 .reset-cart-container {
-  position: fixed;
+  /* position: fixed; */
   bottom: 80px; /* כדי לא להתנגש עם הניווט */
   left: 50%;
   transform: translateX(-50%);
@@ -212,3 +212,17 @@ header h1 {
 .reset-btn:hover {
   background-color: #e60000;
 }
+
+
+.bottom-fixed-bar {
+  position: fixed;
+  bottom: 70px; /* כדי לא להפריע לניווט */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
