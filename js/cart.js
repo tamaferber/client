@@ -11,29 +11,55 @@ window.onload = function () {
     return; 
   }
 
- 
   const totalBar = document.querySelector('.cart-total-bar');
   if (totalBar) totalBar.style.display = 'flex';
 
   let total = 0;
 
-  cart.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'product-cart';
-    card.innerHTML = `
-      <div class="cart-content">
-        <img src="${item.imgSrc}" alt="${item.name}" />
-        <div class="cart-text">
-          <p>${item.name}</p>
-          <p>${item.price}$</p>
-        </div>
+ cart.forEach((item, index) => {
+  const card = document.createElement('div');
+  card.className = 'product-cart';
+  card.innerHTML = `
+    <div class="cart-content">
+      <img src="${item.imgSrc}" alt="${item.name}" />
+      <div class="cart-text">
+        <p>${item.name}</p>
+        <p>${item.price}$</p>
       </div>
-    `;
+    </div>
+  `;
+  card.addEventListener("click", () => {
+    const modal = document.getElementById("confirmModal");
+    const confirmText = document.getElementById("confirmText");
+    const yesBtn = document.getElementById("confirmYes");
+    const noBtn = document.getElementById("confirmNo");
 
-    container.appendChild(card);
+    // עדכון הטקסט
+    confirmText.textContent = `Are you sure you want to delete "${item.name}" from the cart?`;
+    modal.classList.remove("hidden");
 
-    total += item.price * (item.qty || 1); 
+    // ביטול קודם (כדי לא ליצור כפל מאזינים)
+    yesBtn.onclick = null;
+    noBtn.onclick = null;
+
+    // אישור מחיקה
+    yesBtn.onclick = () => {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      modal.classList.add("hidden");
+      location.reload();
+    };
+
+    // ביטול מחיקה
+    noBtn.onclick = () => {
+      modal.classList.add("hidden");
+    };
   });
+
+  container.appendChild(card);
+  total += item.price * (item.qty || 1); 
+});
+
 
   document.getElementById("cart-total").textContent = `₪${total}`;
 };
