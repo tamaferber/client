@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       //שמירה בלןקאל סטורג
       localStorage.setItem("loggedInUser", JSON.stringify(newUser));
+      localStorage.setItem("currentUserEmail", email);
 
       //   ניתוב לדף הבית
       window.location.href = "home.html";

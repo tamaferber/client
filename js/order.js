@@ -36,17 +36,27 @@ function decreaseQty() {
   }
 }
 
-// function addToCartFromPopup() {
+
+// async function addToCartFromPopup() {
 //   const name = document.getElementById('popupName').textContent;
 //   const price = parseInt(document.getElementById('popupPrice').getAttribute("data-price"));
 //   const imgSrc = document.getElementById('popupImage').getAttribute('src');
 //   const qty = parseInt(document.getElementById('popupQty').textContent);
+//   const email = localStorage.getItem('currentUserEmail');
+
+//   if (!email) {
+//     alert("You must be logged in to save your cart.");
+//     return;
+//   }
+
+//   // שמירה בלוקאל
 //   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
- 
 //   cart.push({ name, price, imgSrc, qty });
-
 //   localStorage.setItem('cart', JSON.stringify(cart));
+
+//   // שמירה בשרת
+//   await saveCartToServer([{ name, price, imgSrc, qty }], email);
+
 //   showToast(`${qty} × ${name} added to list`);
 // }
 
@@ -62,14 +72,19 @@ async function addToCartFromPopup() {
     return;
   }
 
-  // שמירה בלוקאל
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.push({ name, price, imgSrc, qty });
-  localStorage.setItem('cart', JSON.stringify(cart));
+  //  שמירה לפי משתמש
+  const cartKey = `cart_${email}`;
+  let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
 
-  // שמירה בשרת
-  await saveCartToServer([{ name, price, imgSrc, qty }], email);
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({ name, price, imgSrc, qty });
+  }
 
+  localStorage.setItem(cartKey, JSON.stringify(cart));
+  await saveCartToServer(cart, email);
   showToast(`${qty} × ${name} added to list`);
 }
 

@@ -1,34 +1,53 @@
-// window.onload = function () {
-//   const cart = JSON.parse(localStorage.getItem('cart')) || [];
+// window.onload = async function () {
+//   const email = localStorage.getItem("currentUserEmail");
 //   const container = document.getElementById('cart-container');
+//   const totalBar = document.querySelector('.cart-total-bar');
 
-//   if (cart.length === 0) {
-//     container.innerHTML = '<p style="text-align:center;">Your cart is empty </p>';
-
-//     const totalBar = document.querySelector('.cart-total-bar');
+//   if (!email) {
+//     console.warn("No user logged in – can't load cart.");
+//     container.innerHTML = '<p style="text-align:center;">You must be logged in to view your cart.</p>';
 //     if (totalBar) totalBar.style.display = 'none';
-
 //     return;
 //   }
 
-//   const totalBar = document.querySelector('.cart-total-bar');
+//   let cart = [];
+
+//   try {
+//     const res = await fetch(`https://smartfridge-server.onrender.com/api/cart?email=${encodeURIComponent(email)}`);
+//     if (!res.ok) throw new Error("Failed to fetch cart");
+//     cart = await res.json();
+//   } catch (err) {
+//     console.error(" Error loading cart:", err);
+//     container.innerHTML = '<p style="text-align:center;">Error loading cart. Please try again later.</p>';
+//     if (totalBar) totalBar.style.display = 'none';
+//     return;
+//   }
+
+//   if (cart.length === 0) {
+//     container.innerHTML = '<p style="text-align:center;">Your cart is empty</p>';
+//     if (totalBar) totalBar.style.display = 'none';
+//     return;
+//   }
+
 //   if (totalBar) totalBar.style.display = 'flex';
 
-//   let total = 0;
-
-//   //   מיזוג כפילויות לפי שם מוצר
+//   // מיזוג פריטים זהים לפי שם
 //   const mergedCart = [];
 //   cart.forEach(item => {
 //     const existing = mergedCart.find(i => i.name === item.name);
 //     if (existing) {
-//       existing.qty += item.qty || 1;
+//       existing.qty += item.qty || item.quantity || 1;
 //     } else {
-//       mergedCart.push({ ...item, qty: item.qty || 1 });
+//       mergedCart.push({
+//         ...item,
+//         qty: item.qty || item.quantity || 1
+//       });
 //     }
 //   });
 
-//   //  הצגה מעוצבת עם כמות ומודאל מחיקה
-//   mergedCart.forEach((item, index) => {
+//   // הצגה
+//   let total = 0;
+//   mergedCart.forEach(item => {
 //     const card = document.createElement('div');
 //     card.className = 'product-cart';
 //     card.innerHTML = `
@@ -42,7 +61,6 @@
 //       </div>
 //     `;
 
-//     // מודאל מחיקה בלחיצה
 //     card.addEventListener("click", () => {
 //       const modal = document.getElementById("confirmModal");
 //       const confirmText = document.getElementById("confirmText");
@@ -52,15 +70,30 @@
 //       confirmText.textContent = `Are you sure you want to delete "${item.name}" from the cart?`;
 //       modal.classList.remove("hidden");
 
-//       yesBtn.onclick = null;
-//       noBtn.onclick = null;
+//       yesBtn.onclick = async () => {
+//         try {
+//           // שליחת בקשת מחיקה לשרת
+//           await fetch("https://smartfridge-server.onrender.com/api/cart", {
+//             method: "DELETE",
+//             headers: {
+//               "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({ email, name: item.name })
+//           });
 
-//       yesBtn.onclick = () => {
-//         const updatedCart = cart.filter(i => i.name !== item.name);
-//         localStorage.setItem('cart', JSON.stringify(updatedCart));
-//         modal.classList.add("hidden");
-//         location.reload();
+//           console.log(` Deleted "${item.name}" from server cart`);
+
+//           // מחיקה מהתצוגה וה־localStorage
+//           const updatedCart = cart.filter(i => i.name !== item.name);
+//           modal.classList.add("hidden");
+//           location.reload();
+
+//         } catch (err) {
+//           console.error(" Failed to delete item from server:", err);
+//           alert("Error deleting item. Please try again.");
+//         }
 //       };
+
 
 //       noBtn.onclick = () => {
 //         modal.classList.add("hidden");
@@ -86,7 +119,7 @@
 //       modal.classList.remove("hidden");
 
 //       yesBtn.onclick = () => {
-//         localStorage.removeItem("cart");
+//         saveCartToServer([], email);
 //         modal.classList.add("hidden");
 //         location.reload();
 //       };
@@ -96,40 +129,36 @@
 //       };
 //     });
 //   }
-//   // 📨 שליחה לשרת עם שיוך למשתמש
-// const email = localStorage.getItem("currentUserEmail");
 
-// if (email) {
-//   const cartWithEmail = mergedCart.map(item => ({
+//   // שליחה לשרת (בסוף טעינה)
+//   // saveCartToServer(mergedCart, email);
+// };
+
+// //  פונקציית שמירה לשרת
+// async function saveCartToServer(cart, email) {
+//   const formattedCart = cart.map(item => ({
 //     name: item.name,
 //     price: item.price,
 //     quantity: item.qty,
+//     imgSrc: item.imgSrc,
 //     email: email
 //   }));
 
 //   try {
-//     fetch("https://smartfridge-server.onrender.com/api/cart", {
+//     const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json"
 //       },
-//       body: JSON.stringify(cartWithEmail)
-//     })
-//       .then(res => {
-//         if (!res.ok) throw new Error("Failed to save cart");
-//         console.log(" Cart saved for:", email);
-//       })
-//       .catch(err => {
-//         console.error(" Error saving cart:", err);
-//       });
-//     } catch (err) {
-//       console.error(" Unexpected error:", err);
-//     }
-//   } else {
-//     console.warn(" No email found – cart not saved to DB.");
-//   }
-// };
+//       body: JSON.stringify(formattedCart)
+//     });
 
+//     if (!res.ok) throw new Error("Failed to save cart");
+//     console.log(" Cart saved for:", email);
+//   } catch (err) {
+//     console.error(" Error saving cart:", err);
+//   }
+// }
 
 window.onload = async function () {
   const email = localStorage.getItem("currentUserEmail");
@@ -143,20 +172,25 @@ window.onload = async function () {
     return;
   }
 
-  let cart = [];
+  const localKey = `cart_${email}`;
+  let cart = JSON.parse(localStorage.getItem(localKey)) || [];
 
-  try {
-    const res = await fetch(`https://smartfridge-server.onrender.com/api/cart?email=${encodeURIComponent(email)}`);
-    if (!res.ok) throw new Error("Failed to fetch cart");
-    cart = await res.json();
-  } catch (err) {
-    console.error(" Error loading cart:", err);
-    container.innerHTML = '<p style="text-align:center;">Error loading cart. Please try again later.</p>';
-    if (totalBar) totalBar.style.display = 'none';
-    return;
+  // אם אין כלום בלוקאל – נביא מהשרת
+  if (!cart.length) {
+    try {
+      const res = await fetch(`https://smartfridge-server.onrender.com/api/cart?email=${encodeURIComponent(email)}`);
+      if (!res.ok) throw new Error("Failed to fetch cart");
+      cart = await res.json();
+      localStorage.setItem(localKey, JSON.stringify(cart));
+    } catch (err) {
+      console.error(" Error loading cart:", err);
+      container.innerHTML = '<p style="text-align:center;">Error loading cart. Please try again later.</p>';
+      if (totalBar) totalBar.style.display = 'none';
+      return;
+    }
   }
 
-  if (cart.length === 0) {
+  if (!cart.length) {
     container.innerHTML = '<p style="text-align:center;">Your cart is empty</p>';
     if (totalBar) totalBar.style.display = 'none';
     return;
@@ -164,7 +198,6 @@ window.onload = async function () {
 
   if (totalBar) totalBar.style.display = 'flex';
 
-  // מיזוג פריטים זהים לפי שם
   const mergedCart = [];
   cart.forEach(item => {
     const existing = mergedCart.find(i => i.name === item.name);
@@ -178,7 +211,6 @@ window.onload = async function () {
     }
   });
 
-  // הצגה
   let total = 0;
   mergedCart.forEach(item => {
     const card = document.createElement('div');
@@ -205,28 +237,23 @@ window.onload = async function () {
 
       yesBtn.onclick = async () => {
         try {
-          // שליחת בקשת מחיקה לשרת
           await fetch("https://smartfridge-server.onrender.com/api/cart", {
             method: "DELETE",
-            headers: {
-              "Content-Type": "application/json"
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, name: item.name })
           });
 
           console.log(` Deleted "${item.name}" from server cart`);
 
-          // מחיקה מהתצוגה וה־localStorage
-          const updatedCart = cart.filter(i => i.name !== item.name);
+          const updatedCart = mergedCart.filter(i => i.name !== item.name);
+          localStorage.setItem(localKey, JSON.stringify(updatedCart));
           modal.classList.add("hidden");
           location.reload();
-
         } catch (err) {
           console.error(" Failed to delete item from server:", err);
           alert("Error deleting item. Please try again.");
         }
       };
-
 
       noBtn.onclick = () => {
         modal.classList.add("hidden");
@@ -239,7 +266,6 @@ window.onload = async function () {
 
   document.getElementById("cart-total").textContent = `$${total}`;
 
-  // כפתור איפוס רשימה
   const resetBtn = document.getElementById("resetCartBtn");
   if (resetBtn) {
     resetBtn.addEventListener("click", () => {
@@ -252,6 +278,7 @@ window.onload = async function () {
       modal.classList.remove("hidden");
 
       yesBtn.onclick = () => {
+        localStorage.removeItem(localKey);
         saveCartToServer([], email);
         modal.classList.add("hidden");
         location.reload();
@@ -262,12 +289,8 @@ window.onload = async function () {
       };
     });
   }
-
-  // שליחה לשרת (בסוף טעינה)
-  // saveCartToServer(mergedCart, email);
 };
 
-// 📨 פונקציית שמירה לשרת
 async function saveCartToServer(cart, email) {
   const formattedCart = cart.map(item => ({
     name: item.name,
@@ -280,9 +303,7 @@ async function saveCartToServer(cart, email) {
   try {
     const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formattedCart)
     });
 
@@ -292,4 +313,3 @@ async function saveCartToServer(cart, email) {
     console.error(" Error saving cart:", err);
   }
 }
-
