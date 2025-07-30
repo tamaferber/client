@@ -113,27 +113,29 @@ function showToast(message) {
 }
 
 async function saveCartToServer(cartItems, email) {
-  const formattedCart = cartItems.map(item => ({
-    name: item.name,
-    price: item.price,
-    quantity: item.qty,
-    imgSrc: item.imgSrc,
-    email: email
-  }));
-
   try {
-    const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formattedCart)
-    });
+    for (const item of cartItems) {
+      const res = await fetch("https://smartfridge-server.onrender.com/api/cart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: item.name,
+          price: item.price,
+          quantity: item.qty,
+          imgSrc: item.imgSrc,
+          email: email
+        })
+      });
 
-    if (!res.ok) throw new Error("Failed to save cart");
+      if (!res.ok) throw new Error(`Failed to save item: ${item.name}`);
+    }
+
     console.log(" Cart saved for:", email);
   } catch (err) {
     console.error(" Error saving cart:", err);
   }
 }
+
 
