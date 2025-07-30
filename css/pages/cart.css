@@ -99,7 +99,7 @@ header h1 {
   text-align: center;
 }
 
-.cart-total-bar {
+/* .cart-total-bar {
   position: sticky;
   bottom: 80px;
   display: flex;
@@ -108,7 +108,13 @@ header h1 {
   z-index: 1000;
   margin-left: 137px;
   margin-right: auto;
+} */
+.cart-total-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
 
 .total-label {
   font-weight: bold;
@@ -225,4 +231,14 @@ header h1 {
   align-items: center;
   gap: 10px;
 }
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 100px; /* כדי לא להתנגש עם הניווט */
+  gap: 10px;
+}
+
 
